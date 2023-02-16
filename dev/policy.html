@@ -121,9 +121,9 @@
 						</p>
 					</div>
 					<form action="#" class="footer__form d-flex">
-						<input type="text" name="name" placeholder="Ваше имя" class="input1">
-						<input type="tel" name="tel" placeholder="Телефон">
-						<button class="btn">
+						<input type="text" name="name" placeholder="Ваше имя" class="input1" required>
+						<input type="tel" name="tel" class="tel" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+						<button type="submit" class="btn">
 							Позвоните мне
 						</button>
 					</form>

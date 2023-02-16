@@ -1,3 +1,39 @@
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call( document.querySelectorAll('.tel'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    }
+
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false)
+
+  });
+
+});
 document.addEventListener("DOMContentLoaded", () => {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -29,12 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
       });
+
+let menuBtn2 = document.querySelector('.menu-btn2');
+let menu2 = document.querySelector('.menu2');
+menuBtn2.addEventListener('click', function(){
+menuBtn2.classList.toggle('active');
+menu2.classList.toggle('active');
+})
+});
 let menuBtn = document.querySelector('.menu-btn');
 let menu = document.querySelector('.menu');
 menuBtn.addEventListener('click', function(){
 	menuBtn.classList.toggle('active');
 	menu.classList.toggle('active');
-})
 });
 const swiper = new Swiper('.swiper', {
     // Optional parameters
@@ -46,10 +89,9 @@ const swiper = new Swiper('.swiper', {
       el: '.swiper-pagination',
     },
   
-    // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   
     // And if we need scrollbar
@@ -57,3 +99,53 @@ const swiper = new Swiper('.swiper', {
       el: '.swiper-scrollbar',
     },
   });
+    class ItcTabs {
+      constructor(target, config) {
+        const defaultConfig = {};
+        this._config = Object.assign(defaultConfig, config);
+        this._elTabs = typeof target === 'string' ? document.querySelector(target) : target;
+        this._elButtons = this._elTabs.querySelectorAll('.tabs__btn');
+        this._elPanes = this._elTabs.querySelectorAll('.tabs__pane');
+        this._eventShow = new Event('tab.itc.change');
+        this._init();
+        this._events();
+      }
+      _init() {
+        this._elTabs.setAttribute('role', 'tablist');
+        this._elButtons.forEach((el, index) => {
+          el.dataset.index = index;
+          el.setAttribute('role', 'tab');
+          this._elPanes[index].setAttribute('role', 'tabpanel');
+        });
+      }
+      show(elLinkTarget) {
+        const elPaneTarget = this._elPanes[elLinkTarget.dataset.index];
+        const elLinkActive = this._elTabs.querySelector('.tabs__btn_active');
+        const elPaneShow = this._elTabs.querySelector('.tabs__pane_show');
+        if (elLinkTarget === elLinkActive) {
+          return;
+        }
+        elLinkActive ? elLinkActive.classList.remove('tabs__btn_active') : null;
+        elPaneShow ? elPaneShow.classList.remove('tabs__pane_show') : null;
+        elLinkTarget.classList.add('tabs__btn_active');
+        elPaneTarget.classList.add('tabs__pane_show');
+        this._elTabs.dispatchEvent(this._eventShow);
+        elLinkTarget.focus();
+      }
+      showByIndex(index) {
+        const elLinkTarget = this._elButtons[index];
+        elLinkTarget ? this.show(elLinkTarget) : null;
+      };
+      _events() {
+        this._elTabs.addEventListener('click', (e) => {
+          const target = e.target.closest('.tabs__btn');
+          if (target) {
+            e.preventDefault();
+            this.show(target);
+          }
+        });
+      }
+    }
+
+    // инициализация .tabs как табов
+    new ItcTabs('.tabs');

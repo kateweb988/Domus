@@ -91,6 +91,8 @@
 			</nav>
 			<div class="container">
 				<div class="header__box">
+					<!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+					<link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet"/> -->
 					<div class="swiper">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
@@ -113,6 +115,50 @@
 						</div>
 						<div class="swiper-pagination"></div>
 					</div>
+					<!-- <script>
+						const swiper = new Swiper('.swiper', {
+						loop: true,
+						autoplay: {
+						  delay: 5000,
+						  disableOnInteraction: false
+						},
+						pagination: {
+						  el: '.swiper-pagination',
+						  bulletClass: 'swiper-pagination-bullet-custom',
+						  bulletActiveClass: 'swiper-pagination-bullet-custom--active',
+						  renderBullet: function(index, className) {
+							return `<div class="${className}" data-index="${index}">
+							  <svg viewbox="0 0 20 20">
+								  <circle r="9" cx="10" cy="10" fill="none" stroke-width="1.5" stroke="#fff"/>
+							  </svg>
+							</div>`
+						  },
+						  clickable: true
+						},
+						navigation: {
+						  nextEl: '.swiper-button-next',
+						  prevEl: '.swiper-button-prev',
+						},
+						on: {
+						  init: function() {
+							const _self = this;
+							
+							_self.el.style.setProperty('--delay', _self.params.autoplay.delay);
+							
+							_self.el.addEventListener('mouseenter', function() {
+							  _self.el.classList.add('swiper--pause');
+							  _self.autoplay.stop();
+							});
+					  
+							_self.el.addEventListener('mouseleave', function() {
+							  _self.el.classList.remove('swiper--pause');
+							  _self.autoplay.start();
+							});
+						  }
+						}
+					  });
+					</script> -->
+					
 					<div class="swiper__bottom">
 						<a href="#" class="swiper__all">
 							Все проекты
@@ -460,9 +506,9 @@
 						</p>
 					</div>
 					<form action="#" class="footer__form d-flex">
-						<input type="text" name="name" placeholder="Ваше имя" class="input1">
-						<input type="tel" name="tel" placeholder="Телефон">
-						<button class="btn">
+						<input type="text" name="name" placeholder="Ваше имя" class="input1" required>
+						<input type="tel" name="tel" class="tel" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+						<button type="submit" class="btn">
 							Позвоните мне
 						</button>
 					</form>
