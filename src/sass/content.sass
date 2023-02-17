@@ -76,7 +76,7 @@
             left: 5px
    &__bottom
       width: 100%
-      margin-top: -25px
+      margin-top: -15px
       position: relative
       z-index: 4
    &-pagination
@@ -110,13 +110,15 @@
       height: 25px
       position: relative
       cursor: pointer
+      // pointer-events: none
    .swiper-pagination-bullet-custom::before 
       content: ''
       display: block
       width: 10px
       height: 10px
       border-radius: 50%
-      background-color: rgba(255,255,255,.65)
+      background-color: #2C2C2C
+      opacity: 0.2
       position: absolute
       left: 50%
       top: 50%
@@ -137,13 +139,16 @@
       stroke-dasharray: 56.5563
       stroke-dashoffset: 56.5563
       animation: BulletProgress calc(var(--delay) * 1ms) linear forwards
-   .swiper-pagination-bullet-custom--active::before 
-      background-color: #fff
+   .swiper-pagination-bullet-custom--active:before 
+      background-color: #1A1A1A !important
+      opacity: 1
+      width: 13px
+      height: 13px
    @keyframes BulletProgress 
       to 
          stroke-dashoffset: 0
-   .swiper--pause .swiper-pagination-bullet-custom--active svg circle 
-      animation: none
+   // .swiper--pause .swiper-pagination-bullet-custom--active svg circle 
+   //    animation: initial
 .text 
    padding: 121px 0 267px
    position: relative
@@ -280,6 +285,8 @@
       border: 1px solid black
 .mySwiper
    height: auto
+   padding-bottom: 60px
+   overflow: hidden
 .about 
    padding: 100px 0
    .swiper__all
@@ -730,8 +737,17 @@
 .project 
    .news__item
       width: 32%
+      p 
+         transition: 0.5s 
+         border-bottom: 1px solid transparent
+         width: max-content
+         margin: 0 auto
       img 
          height: 240px
+      &:hover
+         p 
+            color: $grey
+            border-bottom: 1px solid #CCBBA3
 .partner
    .news__item
       img 
@@ -765,6 +781,45 @@
       z-index: 3
    .swiper-button-next, .swiper-button-prev
       border: none !important
+      transition: 0.5s
+      &:before 
+         transition: 0.5s
+         width: 0
+         content: ""
+         display: block
+         height: 1px
+         background: #1A1A1A
+         flex: 1 0 auto
+         opacity: 0.7
+      &:after
+         transition: 0.5s
+         width: 0
+         content: ""
+         display: block
+         height: 1px
+         opacity: 0.7
+         background: #1A1A1A
+         flex: 1 0 auto
+      img 
+         transition: 0.5s
+   .swiper-button-next
+      &:hover:before 
+         content: ""
+         display: block
+         width: 10px
+         height: 1px
+         background: black
+         flex: 1 0 auto
+         transition: 0.5s
+   .swiper-button-prev
+      &:hover:after
+         content: ""
+         display: block
+         width: 10px
+         height: 1px
+         background: black
+         flex: 1 0 auto
+         transition: 0.5s
    .menu-btn2
       display: block !important
       font-size: 14px
@@ -877,3 +932,99 @@
          font-size: 16px
          line-height: 140%
          max-width: 240px
+.open-popup
+   display: inline-block
+   padding: 15px 30px
+   text-transform: uppercase
+   background: #2982ff
+   color: #fff
+   text-decoration: none
+   font-weight: 500
+   border-radius: 5px
+.popup__bg
+   position: fixed
+   top: 0
+   left: 0
+   width: 100%
+   height: 100vh
+   background: #666666
+   opacity: 0
+   pointer-events: none
+   transition: 0.5s all
+   overflow-y: auto
+   overflow-x: hidden
+.popup__bg.active
+    opacity: 1
+    pointer-events: all
+    transition: 0.5s all
+    z-index: 22
+.popup
+   position: absolute
+   top: 49%
+   left: 50%
+   transform: translate(-50%, -50%) scale(0)
+   width: 930px
+   height: 556px
+   transition: 0.5s all
+   text-align: center
+   &__wrap 
+      padding-bottom: 50px
+   &__flex 
+      justify-content: center
+      align-items: center
+      margin-top: 40px
+      p 
+         font-weight: 400
+         font-size: 14px
+         line-height: 140%
+         color: #FFFFFF
+         text-align: center
+   h2 
+      color: white
+      text-align: center
+      margin: 0 auto 10px
+   h3 
+      font-size: 20px
+      line-height: 140%
+      text-align: center
+      text-transform: uppercase
+      color: white
+      margin: 0 auto 50px
+      border: none
+.popup.active
+   transform: translate(-50%, -50%) scale(1)
+   transition: 0.5s all
+.close-popup
+   position: absolute
+   top: 0
+   right: -100px
+   cursor: pointer
+   width: 12px
+   height: 12px
+   fill: white
+   &:hover 
+      transform: rotate(90deg)
+      fill: $grey
+.mySwiper2
+   overflow: visible
+   height: auto
+   padding-bottom: 0
+   max-width: 800px
+   .swiper-slide-active
+      transform: scale(1.1) !important
+      z-index: 3
+   .swiper-slide
+      margin-right: 0px
+      max-width: 800px
+      transition: 0.5s
+      transform: scale(0.8)
+   .swiper-pagination
+      position: absolute
+      right: 0
+      bottom: -3px
+      left: inherit
+      color: white
+      font-size: 14px
+      span 
+         font-size: 14px
+         color: white

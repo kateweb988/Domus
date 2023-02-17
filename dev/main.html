@@ -10,7 +10,9 @@
 	<meta name="format-detection" content="address=no">
 	<meta name="format-detection" content="email=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
+	<!-- Favicon -->
+	<link rel="icon" href="img/fav.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
 	<title>DOMUS OPTIMA</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -20,7 +22,8 @@
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-	<script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -91,8 +94,6 @@
 			</nav>
 			<div class="container">
 				<div class="header__box">
-					<!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-					<link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet"/> -->
 					<div class="swiper">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
@@ -115,50 +116,6 @@
 						</div>
 						<div class="swiper-pagination"></div>
 					</div>
-					<!-- <script>
-						const swiper = new Swiper('.swiper', {
-						loop: true,
-						autoplay: {
-						  delay: 5000,
-						  disableOnInteraction: false
-						},
-						pagination: {
-						  el: '.swiper-pagination',
-						  bulletClass: 'swiper-pagination-bullet-custom',
-						  bulletActiveClass: 'swiper-pagination-bullet-custom--active',
-						  renderBullet: function(index, className) {
-							return `<div class="${className}" data-index="${index}">
-							  <svg viewbox="0 0 20 20">
-								  <circle r="9" cx="10" cy="10" fill="none" stroke-width="1.5" stroke="#fff"/>
-							  </svg>
-							</div>`
-						  },
-						  clickable: true
-						},
-						navigation: {
-						  nextEl: '.swiper-button-next',
-						  prevEl: '.swiper-button-prev',
-						},
-						on: {
-						  init: function() {
-							const _self = this;
-							
-							_self.el.style.setProperty('--delay', _self.params.autoplay.delay);
-							
-							_self.el.addEventListener('mouseenter', function() {
-							  _self.el.classList.add('swiper--pause');
-							  _self.autoplay.stop();
-							});
-					  
-							_self.el.addEventListener('mouseleave', function() {
-							  _self.el.classList.remove('swiper--pause');
-							  _self.autoplay.start();
-							});
-						  }
-						}
-					  });
-					</script> -->
-					
 					<div class="swiper__bottom">
 						<a href="#" class="swiper__all">
 							Все проекты
@@ -293,7 +250,7 @@
 					<p class="about__sub">
 						Проекты из портфолио студии высоко отмечены профессиональным сообществом и с постоянством публикуются в таких знаковых архитектурных изданиях как SALON, AD, INTERIOR+DESIGN и других.
 					</p>
-					<div class="swiper mySwiper">
+					<div class="mySwiper">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
@@ -589,6 +546,49 @@
 	
 	}
 	</script>    
+	<script>
+		const swiper = new Swiper('.swiper', {
+		loop: true,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			bulletClass: 'swiper-pagination-bullet-custom',
+			bulletActiveClass: 'swiper-pagination-bullet-custom--active',
+			renderBullet: function(index, className) {
+			return `<div class="${className}" data-index="${index}">
+				<svg viewbox="0 0 20 20">
+					<circle r="9" cx="10" cy="10" fill="none" stroke-width="1.5" stroke="#1A1A1A"/>
+				</svg>
+			</div>`
+			},
+			clickable: true
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		on: {
+			init: function() {
+			const _self = this;
+			
+			_self.el.style.setProperty('--delay', _self.params.autoplay.delay);
+			
+			_self.el.addEventListener('mouseenter', function() {
+				_self.el.classList.add('swiper--pause');
+				_self.autoplay.stop();
+			});
+		
+			_self.el.addEventListener('mouseleave', function() {
+				_self.el.classList.remove('swiper--pause');
+				_self.autoplay.start();
+			});
+			}
+		}
+		});
+	</script>
 	<script src="js/all.js"></script>
 </body>
 

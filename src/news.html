@@ -10,17 +10,17 @@
 	<meta name="format-detection" content="address=no">
 	<meta name="format-detection" content="email=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
+	<!-- Favicon -->
+	<link rel="icon" href="img/fav.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
 	<title>DOMUS OPTIMA</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-
 	<meta property="og:locale" content="ru-Ru">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-	<script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -440,55 +440,161 @@
 				</div>
 			</div>
 		</footer>
+		<div class="popup__bg">
+			<div class="popup">
+				<svg class="close-popup" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.705882 0L0 0.705882L5.29412 6L0 11.2941L0.705882 12L6 6.70588L11.2941 12L12 11.2941L6.70588 6L12 0.705882L11.2941 0L6 5.29412L0.705882 0Z"/>
+				</svg>
+				<div class="popup__wrap">
+					<h2>
+						Публикации
+					</h2>
+					<h3>
+						Выпуск про декор
+					</h3>
+					<!-- Swiper -->
+					<div class="swiper mySwiper2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+							<div class="swiper-slide">
+								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							</div>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="popup__flex d-flex">
+							<p>
+								Авторский надзор за исполнением при этом мы берем на себя.
+							</p>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<script type="module">
 		import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 	  
 		const swiper = new Swiper(...)
+	</script>   
+	<script>
+		class ItcTabs {
+  		constructor(target, config) {
+    const defaultConfig = {};
+    this._config = Object.assign(defaultConfig, config);
+    this._elTabs = typeof target === 'string' ? document.querySelector(target) : target;
+    this._elButtons = this._elTabs.querySelectorAll('.tabs__btn');
+    this._elPanes = this._elTabs.querySelectorAll('.tabs__pane');
+    this._eventShow = new Event('tab.itc.change');
+    this._init();
+    this._events();
+  }
+  _init() {
+    this._elTabs.setAttribute('role', 'tablist');
+    this._elButtons.forEach((el, index) => {
+      el.dataset.index = index;
+      el.setAttribute('role', 'tab');
+      this._elPanes[index].setAttribute('role', 'tabpanel');
+    });
+  }
+  show(elLinkTarget) {
+    const elPaneTarget = this._elPanes[elLinkTarget.dataset.index];
+    const elLinkActive = this._elTabs.querySelector('.tabs__btn_active');
+    const elPaneShow = this._elTabs.querySelector('.tabs__pane_show');
+    if (elLinkTarget === elLinkActive) {
+      return;
+    }
+    elLinkActive ? elLinkActive.classList.remove('tabs__btn_active') : null;
+    elPaneShow ? elPaneShow.classList.remove('tabs__pane_show') : null;
+    elLinkTarget.classList.add('tabs__btn_active');
+    elPaneTarget.classList.add('tabs__pane_show');
+    this._elTabs.dispatchEvent(this._eventShow);
+    elLinkTarget.focus();
+  }
+  showByIndex(index) {
+    const elLinkTarget = this._elButtons[index];
+    elLinkTarget ? this.show(elLinkTarget) : null;
+  };
+  _events() {
+    this._elTabs.addEventListener('click', (e) => {
+      const target = e.target.closest('.tabs__btn');
+      if (target) {
+        e.preventDefault();
+        this.show(target);
+      }
+    });
+  }
+}
+
+// инициализация .tabs как табов
+new ItcTabs('.tabs');
 	</script>
-	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script type="text/javascript">
-	ymaps.ready(init);
-	
-	function init () {
-		var myMap = new ymaps.Map("map", {
-			// Центр карты, указываем коордианты
-			center:[55.704524, 37.615380],
-			// Масштаб, тут все просто
-			zoom: 12,
-			// Отключаем все элементы управления
-			controls: []
-		}); 
-				
-		var myGeoObjects = [];
-		
-		// Наша метка, указываем коордианты
-		myGeoObjects = new ymaps.Placemark([55.704524, 37.615380],{
-						balloonContentBody: 'DOMUS OPTIMA ',
-						},{
-						iconLayout: 'default#image',
-						// Путь до нашей картинки
-						iconImageHref: '/img/icon.png', 
-						// Размер по ширине и высоте
-						iconImageSize: [340, 150],
-						// Смещение левого верхнего угла иконки относительно
-						// её «ножки» (точки привязки).
-						iconImageOffset: [-35, -35]
+	<script>
+		    //popup
+	let popupBg = document.querySelector('.popup__bg');
+    let popup = document.querySelector('.popup');
+    let openPopupButtons = document.querySelectorAll('.pub__pic');
+    let closePopupButton = document.querySelector('.close-popup');
+    
+    openPopupButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            popupBg.classList.add('active');
+            popup.classList.add('active');
+        })
+    });
+    
+    closePopupButton.addEventListener('click',() => {
+        popupBg.classList.remove('active');
+        popup.classList.remove('active');
+    });
+    
+    document.addEventListener('click', (e) => {
+        if(e.target === popupBg) {
+            popupBg.classList.remove('active');
+            popup.classList.remove('active');
+        }
+    });
+	</script>
+	<script>
+		var swiper = new Swiper(".mySwiper2", {
+		  pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+		  },
+		  navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		  },
 		});
-					
-		var clusterer = new ymaps.Clusterer({
-			clusterDisableClickZoom: false,
-			clusterOpenBalloonOnClick: false,
+	  </script>
+	<script>
+		let menuBtn = document.querySelector('.menu-btn');
+		let menu = document.querySelector('.menu');
+		menuBtn.addEventListener('click', function(){
+			menuBtn.classList.toggle('active');
+			menu.classList.toggle('active');
 		});
-		
-		clusterer.add(myGeoObjects);
-		myMap.geoObjects.add(clusterer);
-		// Отлючаем возможность изменения масштаба
-		myMap.behaviors.disable('scrollZoom');
-	
-	}
-	</script>    
+	</script>
 	<script src="js/all.js"></script>
 </body>
 
