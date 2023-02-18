@@ -1649,6 +1649,112 @@ html *::-webkit-scrollbar-thumb {
   color: white;
 }
 
+.box {
+  cursor: none;
+}
+.box a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 0px;
+  left: 0%;
+  background: black;
+  transition: width 0.3s ease;
+}
+.box a:hover:after {
+  width: 100%;
+  left: 0%;
+  background: black;
+}
+.box .swiper-button-next, .box .swiper-button-prev {
+  width: 112%;
+  height: 100vh;
+  z-index: 10000;
+  border: none !important;
+  cursor: none;
+}
+.box .swiper-button-prev {
+  left: -58%;
+  top: -55%;
+}
+.box .swiper-button-next {
+  right: -58%;
+  top: -55%;
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+  transition: all 200ms ease-out;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  left: inherit;
+  right: 125%;
+  top: -30px;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  opacity: 0.3;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  z-index: 1000;
+  right: 125%;
+  top: -30px;
+}
+
+.hover {
+  background: url(/img/left.webp) no-repeat !important;
+  width: 70px;
+  height: 20px;
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+}
+
+.hover2 {
+  background: url(/img/right.webp) no-repeat !important;
+  width: 70px;
+  height: 20px;
+}
+
+@media screen and (max-width: 1920px) {
+  .box .swiper-button-next, .box .swiper-button-prev {
+    width: 140%;
+    height: 85vh;
+    top: inherit;
+    bottom: -1%;
+  }
+  .box .swiper-button-prev {
+    left: -70% !important;
+    right: inherit !important;
+    width: 124%;
+  }
+  .box .swiper-button-next {
+    right: -70% !important;
+    left: inherit !important;
+  }
+}
 @media screen and (max-width: 1199px) {
   .van__item img {
     width: 57%;
@@ -1742,6 +1848,9 @@ html *::-webkit-scrollbar-thumb {
   }
   .popup__bg {
     overflow: hidden;
+  }
+  .box .swiper-button-next, .box .swiper-button-prev {
+    height: 39vh;
   }
 }
 @media (max-width: 991px) {
@@ -2283,6 +2392,9 @@ html *::-webkit-scrollbar-thumb {
   .header .swiper-pagination-bullet-custom {
     width: 20px;
     height: 20px;
+  }
+  .box .swiper-button-next, .box .swiper-button-prev {
+    display: none;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 576px) {

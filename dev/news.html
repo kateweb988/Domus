@@ -452,50 +452,49 @@
 					<h3>
 						Выпуск про декор
 					</h3>
-					<!-- Swiper -->
-					<div class="swiper mySwiper2">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+					<section class="box">
+						<!-- Swiper -->
+						<div class="swiper mySwiper2">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
+								<div class="swiper-slide">
+									<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+								</div>
 							</div>
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
-							</div>
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
-							</div>
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
-							</div>
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
-							</div>
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
-							</div>
-							<div class="swiper-slide">
-								<img src="/img/img15.png" srcset="/img/2x/img15-2x.png 2x" class="about__pic">
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="popup__flex d-flex">
+								<p>
+									Авторский надзор за исполнением при этом мы берем на себя.
+								</p>
+								<div class="swiper-pagination"></div>
 							</div>
 						</div>
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-						<div class="popup__flex d-flex">
-							<p>
-								Авторский надзор за исполнением при этом мы берем на себя.
-							</p>
-							<div class="swiper-pagination"></div>
-						</div>
-					</div>
+						<div class="cursor"></div>
+						<div class="cursor2"></div>
+					</section>
 				</div>
 			</div>
 		</div> 
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script type="module">
-		import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-	  
-		const swiper = new Swiper(...)
-	</script>   
 	<script>
 		class ItcTabs {
   		constructor(target, config) {
@@ -587,14 +586,6 @@ new ItcTabs('.tabs');
 		  },
 		});
 	  </script>
-	<script>
-		let menuBtn = document.querySelector('.menu-btn');
-		let menu = document.querySelector('.menu');
-		menuBtn.addEventListener('click', function(){
-			menuBtn.classList.toggle('active');
-			menu.classList.toggle('active');
-		});
-	</script>
 	<script src="js/all.js"></script>
 </body>
 
