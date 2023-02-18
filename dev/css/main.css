@@ -1738,6 +1738,24 @@ html *::-webkit-scrollbar-thumb {
   height: 20px;
 }
 
+.project-view .swiper-button-next, .project-view .swiper-button-prev {
+  top: 50%;
+  transition: 0.2s;
+}
+.project-view .swiper-button-next img, .project-view .swiper-button-prev img {
+  width: 50px;
+  flex: 1 0 auto;
+  max-width: 50px;
+  transition: 0.2s;
+}
+.project-view .swiper-button-next:before, .project-view .swiper-button-next:after, .project-view .swiper-button-prev:before, .project-view .swiper-button-prev:after {
+  display: none !important;
+}
+.project-view .swiper-button-next:hover img, .project-view .swiper-button-prev:hover img {
+  width: 70px;
+  max-width: 70px;
+}
+
 @media screen and (max-width: 1920px) {
   .box .swiper-button-next, .box .swiper-button-prev {
     width: 140%;
@@ -1796,6 +1814,7 @@ html *::-webkit-scrollbar-thumb {
     right: 40%;
     left: inherit;
     z-index: 4;
+    top: inherit;
   }
   .project-view .swiper-button-prev {
     top: inherit;
@@ -2255,7 +2274,7 @@ html *::-webkit-scrollbar-thumb {
     outline: none;
   }
   .about-text {
-    padding: 115px 0 80px;
+    padding: 80px 0;
   }
   .team {
     padding: 40px 0;

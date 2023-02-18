@@ -1102,3 +1102,17 @@
    background: url(/img/right.webp) no-repeat !important
    width: 70px
    height: 20px
+.project-view .swiper-button-next, .project-view .swiper-button-prev
+   top: 50%
+   transition: 0.2s
+   img 
+      width: 50px
+      flex: 1 0 auto
+      max-width: 50px
+      transition: 0.2s
+   &:before, &:after
+      display: none !important
+   &:hover 
+      img
+         width: 70px
+         max-width: 70px
