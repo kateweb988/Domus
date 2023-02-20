@@ -64,7 +64,7 @@
          height: 8px
          background: url(/img/arr-right.svg) no-repeat
          position: relative
-         margin-left: 15px
+         margin-left: 10px
          transition: 0.3s
          left: 0
       &:hover 
@@ -110,7 +110,7 @@
       height: 25px
       position: relative
       cursor: pointer
-      // pointer-events: none
+      outline: none !important
    .swiper-pagination-bullet-custom::before 
       content: ''
       display: block
@@ -133,8 +133,23 @@
       left: 50%
       top: 50%
       transform: translate(-50%, -50%) rotate(-90deg)
-   .swiper-pagination-bullet-custom--active svg 
-      display: block
+      z-index: 2
+   .swiper-pagination-bullet-custom--active
+      border-radius: 50%
+      position: relative
+      svg 
+         display: block
+      &:after 
+         content: ""
+         position: absolute
+         width: 20px
+         height: 20px
+         border-radius: 50%
+         left: 0
+         top: 1px
+         border: 2px solid #D4D4D4
+         display: block
+         z-index: 0
    .swiper-pagination-bullet-custom--active svg circle 
       stroke-dasharray: 56.5563
       stroke-dashoffset: 56.5563
@@ -142,13 +157,11 @@
    .swiper-pagination-bullet-custom--active:before 
       background-color: #1A1A1A !important
       opacity: 1
-      width: 13px
-      height: 13px
+      width: 11px
+      height: 11px
    @keyframes BulletProgress 
       to 
          stroke-dashoffset: 0
-   // .swiper--pause .swiper-pagination-bullet-custom--active svg circle 
-   //    animation: initial
 .text 
    padding: 121px 0 267px
    position: relative
@@ -174,15 +187,16 @@
 .author 
    padding: 100px 0 105px
    position: relative
-   &:after 
-      content: ""
-      display: block
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 10px
-      background: url(/img/line.svg) no-repeat
+   border-bottom: 1.5px dashed rgba(44, 44, 44, 0.2)
+   // &:after 
+   //    content: ""
+   //    display: block
+   //    position: absolute
+   //    bottom: 0
+   //    left: 0
+   //    width: 100%
+   //    height: 10px
+   //    background: url(/img/line.png) no-repeat
    h2 
       margin: 0 auto 50px
    &__item 
@@ -221,21 +235,24 @@
 .van 
    padding: 96px 0 140px
    position: relative
-   &:after 
-      content: ""
-      display: block
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 10px
-      background: url(/img/line.svg) no-repeat
+   border-bottom: 1.5px dashed rgba(44, 44, 44, 0.2)
    h2 
       margin: 0 auto 50px
    &__item 
       align-items: flex-start
       justify-content: space-between
       margin-bottom: 120px
+      position: relative
+      &:after 
+         position: absolute
+         content: ""
+         display: block
+         right: 480px
+         bottom: -39px
+         z-index: -1
+         width: 261px
+         height: 228px
+         background: #FAFAFA
       img 
          filter: drop-shadow(0px 4px 125px rgba(0, 0, 0, 0.1))
          width: 700px
@@ -247,6 +264,9 @@
          img 
             order: 1
             display: flex
+         &:after 
+            right: inherit
+            left: 480px
       &:last-child
          margin-bottom: 0
    &__content 
@@ -437,6 +457,9 @@
          svg 
             width: 15px
             height: 13px
+            position: relative
+            left: -1px
+            top: 1px
    &__box 
       justify-content: space-between
       align-items: center
@@ -466,10 +489,31 @@
          color: $black
 .menu-btn, .menu
    display: none
+.text 
+   h1 
+      margin: 0 auto 16px
+      font-size: 16px
+      font-family: 'Futura PT'
+      font-weight: 500
+      text-transform: uppercase
+      color: #1A1A1A
+      border-bottom: 1px solid #CCBBA3
+      width: max-content
+      padding-bottom: 2px
 .about 
    &-text 
       padding: 100px 0
       background: #FAFAFA
+      h1 
+         margin: 0 auto 16px
+         font-size: 16px
+         font-family: 'Futura PT'
+         font-weight: 500
+         text-transform: uppercase
+         color: #1A1A1A
+         border-bottom: 1px solid #CCBBA3
+         width: max-content
+         padding-bottom: 2px
    &-author::after
       display: none
 .header2 
@@ -535,6 +579,7 @@
       width: 49%
       text-align: center
       margin-bottom: 50px
+      position: relative
       img 
          width: 100%
          height: 330px
@@ -611,7 +656,7 @@
          height: 338px
          object-fit: cover
          margin-right: 35px
-      h4 
+      h4  , h1
          margin: 0 0 10px
          font-size: 14px
          line-height: 140%
@@ -734,8 +779,21 @@
          &:hover 
             color: $grey
             border-bottom: 1px solid $grey
-.project .news__item:hover:before
+.project .news__item:hover:before, .news .news__item:hover:before
    opacity: 1
+.partner .news__item:hover:before
+   height: 340px
+.news .news__item:before
+   position: absolute
+   content: ""
+   display: block
+   width: 100%
+   height: 330px
+   top: 0
+   left: 0
+   background-color: rgb(255, 255, 255, 0.3)
+   transition: 0.5s
+   opacity: 0
 .project 
    .news__item
       width: 32%
@@ -783,6 +841,20 @@
          h2 
             color: $grey
 .atelier 
+   &__content 
+      max-width: 455px
+      margin-bottom: 50px
+      h3 
+         font-weight: 450
+         font-size: 14px
+         line-height: 140%
+         text-transform: uppercase
+         margin-bottom: 11px
+         font-family: 'Futura PT Book'
+         color: $black
+      p 
+         font-size: 14px
+         line-height: 140%
    .news__item
       p
          margin-bottom: 15px
@@ -871,7 +943,7 @@
          z-index: 2
          transition: 0.5s
          max-height: 470px
-         p:nth-child(1)
+         h1
             margin-bottom: 20px
             font-size: 20px
             line-height: 140%
@@ -1005,6 +1077,7 @@
       color: white
       margin: 0 auto 50px
       border: none
+      font-weight: 450
 .popup.active
    transform: translate(-50%, -50%) scale(1)
    transition: 0.5s all
@@ -1096,7 +1169,6 @@
    width: 50px
    height: 50px
    border-radius: 100%
-   opacity: .3
    position: fixed
    transform: translate(-50%, -50%)
    pointer-events: none
@@ -1105,17 +1177,28 @@
    right: 125%
    top: -30px
 .hover 
-   background: url(/img/left.webp) no-repeat  !important
+   background: url(/img/ll.png) no-repeat  !important
    width: 70px
    height: 20px
+   -webkit-appearance: none
+   text-indent: -9999px
+   background-color: transparent
+   border: none
+   outline: none
 .cursorinnerhover 
    width: 50px
    height: 50px
    opacity: .5
 .hover2
-   background: url(/img/right.webp) no-repeat !important
+   background: url(/img/rr.png) no-repeat !important
    width: 70px
-   height: 20px
+   height: 32px
+   -webkit-appearance: none
+   text-indent: -9999px
+   background-color: white
+   border: none
+   outline: none
+   background-size: 27% !important
 .project-view .swiper-button-next, .project-view .swiper-button-prev
    top: 50%
    transition: 0.2s
@@ -1130,3 +1213,6 @@
       img
          width: 70px
          max-width: 70px
+#text3 
+   h1 
+      margin-bottom: 0

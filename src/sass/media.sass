@@ -86,7 +86,15 @@
       overflow: hidden
    .box .swiper-button-next, .box .swiper-button-prev
       height: 39vh
+   .news-detail img
+      height: auto
+   .van__item:after
+      right: 315px
+   .van__item:nth-child(2n):after
+      left: 315px
 @media ( max-width: 991px )
+   .van__item:after
+      display: none !important
    .menu-btn 
       width: 30px
       height: 30px
@@ -243,6 +251,10 @@
       bottom: -20px
    .close-popup 
       right: 11%
+   .news-detail
+      padding: 40px 0 100px
+   .header .swiper-pagination-bullet-custom:not(:last-child)
+      margin-right: 1px
 @media screen and (max-width: 767px)
    .swiper
       height: 100%
@@ -290,6 +302,8 @@
       max-width: 520px
    .close-popup
       right: 22%
+   .news .news__item:before
+      height: 207px
 @media screen and (max-width: 576px)
    input, textarea, select
       -webkit-appearance: none
@@ -328,7 +342,7 @@
       padding-bottom: 100px
    .author__item img 
       width: 100%
-      height: 454px
+      height: auto
    .author__right
       max-width: 100%
    .author__item_2
@@ -343,7 +357,7 @@
       padding: 0
       margin: 0px 0 40px 32px
    #map
-      height: 687px
+      height: 450px
    .footer__form
       flex-direction: column
    .footer__form
@@ -383,7 +397,7 @@
    .team 
       padding: 40px 0 
    .team__box .author__item img
-      height: 518px
+      height: auto
    .news__item a
       font-size: 12px
    .news__item img
@@ -408,7 +422,8 @@
    .error
       padding: 120px 0 220px
    .ymaps-2-1-79-image 
-      width: 200px !important
+      width: 220px !important
+      height: 80px !important
       background-size: 100% !important
       background-repeat: no-repeat !important
    .project
@@ -480,11 +495,25 @@
       height: 20px
    .box .swiper-button-next, .box .swiper-button-prev
       display: none
+   .header .swiper-pagination-bullet-custom--active:after
+      width: 15px
+      height: 15px
+      left: 0.5px
+      top: 0.5px
+   .text-main 
+      padding: 120px 0 157px
 @media screen and (min-width: 400px) and (max-width: 576px)
    .project-view .menu2.active 
-      bottom: 11%
+      bottom: 12%
+@media screen and (min-width: 525px) and (max-width: 576px)
+   .project-view .menu2.active
+      bottom: 12.8%
 @media screen and (max-width: 340px)
    .project-view .menu2.active
       bottom: 14%
    .pub__item
       width: 48%
+   .project-view .swiper-button-prev
+      left: 33%
+   .project-view .swiper-button-next
+      right: 33%

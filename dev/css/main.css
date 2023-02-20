@@ -179,7 +179,7 @@ template {
 }
 
 body {
-  font-family: "Futura PT Book";
+  font-family: "Futura PT Book", sans-serif;
   background: #FFFFFF;
   font-weight: 400;
   font-size: 16px;
@@ -234,12 +234,12 @@ footer {
 
 h1 {
   margin: 0;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 
 h2 {
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 140%;
@@ -330,7 +330,7 @@ div {
 }
 
 .btn {
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -466,7 +466,7 @@ html *::-webkit-scrollbar-thumb {
   height: 8px;
   background: url(/img/arr-right.svg) no-repeat;
   position: relative;
-  margin-left: 15px;
+  margin-left: 10px;
   transition: 0.3s;
   left: 0;
 }
@@ -525,6 +525,7 @@ html *::-webkit-scrollbar-thumb {
   height: 25px;
   position: relative;
   cursor: pointer;
+  outline: none !important;
 }
 .header .swiper-pagination-bullet-custom::before {
   content: "";
@@ -550,9 +551,26 @@ html *::-webkit-scrollbar-thumb {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
+  z-index: 2;
+}
+.header .swiper-pagination-bullet-custom--active {
+  border-radius: 50%;
+  position: relative;
 }
 .header .swiper-pagination-bullet-custom--active svg {
   display: block;
+}
+.header .swiper-pagination-bullet-custom--active:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 0;
+  top: 1px;
+  border: 2px solid #D4D4D4;
+  display: block;
+  z-index: 0;
 }
 .header .swiper-pagination-bullet-custom--active svg circle {
   stroke-dasharray: 56.5563;
@@ -562,8 +580,8 @@ html *::-webkit-scrollbar-thumb {
 .header .swiper-pagination-bullet-custom--active:before {
   background-color: #1A1A1A !important;
   opacity: 1;
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
 }
 @keyframes BulletProgress {
   to {
@@ -603,16 +621,7 @@ html *::-webkit-scrollbar-thumb {
 .author {
   padding: 100px 0 105px;
   position: relative;
-}
-.author:after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: url(/img/line.svg) no-repeat;
+  border-bottom: 1.5px dashed rgba(44, 44, 44, 0.2);
 }
 .author h2 {
   margin: 0 auto 50px;
@@ -659,16 +668,7 @@ html *::-webkit-scrollbar-thumb {
 .van {
   padding: 96px 0 140px;
   position: relative;
-}
-.van:after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: url(/img/line.svg) no-repeat;
+  border-bottom: 1.5px dashed rgba(44, 44, 44, 0.2);
 }
 .van h2 {
   margin: 0 auto 50px;
@@ -677,6 +677,18 @@ html *::-webkit-scrollbar-thumb {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 120px;
+  position: relative;
+}
+.van__item:after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 480px;
+  bottom: -39px;
+  z-index: -1;
+  width: 261px;
+  height: 228px;
+  background: #FAFAFA;
 }
 .van__item img {
   filter: drop-shadow(0px 4px 125px rgba(0, 0, 0, 0.1));
@@ -690,6 +702,10 @@ html *::-webkit-scrollbar-thumb {
 .van__item:nth-child(2n) img {
   order: 1;
   display: flex;
+}
+.van__item:nth-child(2n):after {
+  right: inherit;
+  left: 480px;
 }
 .van__item:last-child {
   margin-bottom: 0;
@@ -923,6 +939,9 @@ html *::-webkit-scrollbar-thumb {
 .footer__link:nth-child(1) svg {
   width: 15px;
   height: 13px;
+  position: relative;
+  left: -1px;
+  top: 1px;
 }
 .footer__box {
   justify-content: space-between;
@@ -962,9 +981,32 @@ html *::-webkit-scrollbar-thumb {
   display: none;
 }
 
+.text h1 {
+  margin: 0 auto 16px;
+  font-size: 16px;
+  font-family: "Futura PT";
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  border-bottom: 1px solid #CCBBA3;
+  width: max-content;
+  padding-bottom: 2px;
+}
+
 .about-text {
   padding: 100px 0;
   background: #FAFAFA;
+}
+.about-text h1 {
+  margin: 0 auto 16px;
+  font-size: 16px;
+  font-family: "Futura PT";
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  border-bottom: 1px solid #CCBBA3;
+  width: max-content;
+  padding-bottom: 2px;
 }
 .about-author::after {
   display: none;
@@ -1051,6 +1093,7 @@ html *::-webkit-scrollbar-thumb {
   width: 49%;
   text-align: center;
   margin-bottom: 50px;
+  position: relative;
 }
 .news__item img {
   width: 100%;
@@ -1143,7 +1186,7 @@ html *::-webkit-scrollbar-thumb {
   object-fit: cover;
   margin-right: 35px;
 }
-.news-detail h4 {
+.news-detail h4, .news-detail h1 {
   margin: 0 0 10px;
   font-size: 14px;
   line-height: 140%;
@@ -1297,8 +1340,25 @@ html *::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #B3B3B3;
 }
 
-.project .news__item:hover:before {
+.project .news__item:hover:before, .news .news__item:hover:before {
   opacity: 1;
+}
+
+.partner .news__item:hover:before {
+  height: 340px;
+}
+
+.news .news__item:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 330px;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.5s;
+  opacity: 0;
 }
 
 .project .news__item {
@@ -1354,6 +1414,23 @@ html *::-webkit-scrollbar-thumb {
   color: #B3B3B3;
 }
 
+.atelier__content {
+  max-width: 455px;
+  margin-bottom: 50px;
+}
+.atelier__content h3 {
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+  font-family: "Futura PT Book";
+  color: #1A1A1A;
+}
+.atelier__content p {
+  font-size: 14px;
+  line-height: 140%;
+}
 .atelier .news__item p {
   margin-bottom: 15px;
 }
@@ -1453,7 +1530,7 @@ html *::-webkit-scrollbar-thumb {
   transition: 0.5s;
   max-height: 470px;
 }
-.project-view .menu2.active p:nth-child(1) {
+.project-view .menu2.active h1 {
   margin-bottom: 20px;
   font-size: 20px;
   line-height: 140%;
@@ -1616,6 +1693,7 @@ html *::-webkit-scrollbar-thumb {
   color: white;
   margin: 0 auto 50px;
   border: none;
+  font-weight: 450;
 }
 
 .popup.active {
@@ -1727,7 +1805,6 @@ html *::-webkit-scrollbar-thumb {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  opacity: 0.3;
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -1738,9 +1815,14 @@ html *::-webkit-scrollbar-thumb {
 }
 
 .hover {
-  background: url(/img/left.webp) no-repeat !important;
+  background: url(/img/ll.png) no-repeat !important;
   width: 70px;
   height: 20px;
+  -webkit-appearance: none;
+  text-indent: -9999px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .cursorinnerhover {
@@ -1750,9 +1832,15 @@ html *::-webkit-scrollbar-thumb {
 }
 
 .hover2 {
-  background: url(/img/right.webp) no-repeat !important;
+  background: url(/img/rr.png) no-repeat !important;
   width: 70px;
-  height: 20px;
+  height: 32px;
+  -webkit-appearance: none;
+  text-indent: -9999px;
+  background-color: white;
+  border: none;
+  outline: none;
+  background-size: 27% !important;
 }
 
 .project-view .swiper-button-next, .project-view .swiper-button-prev {
@@ -1771,6 +1859,10 @@ html *::-webkit-scrollbar-thumb {
 .project-view .swiper-button-next:hover img, .project-view .swiper-button-prev:hover img {
   width: 70px;
   max-width: 70px;
+}
+
+#text3 h1 {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 1920px) {
@@ -1888,8 +1980,20 @@ html *::-webkit-scrollbar-thumb {
   .box .swiper-button-next, .box .swiper-button-prev {
     height: 39vh;
   }
+  .news-detail img {
+    height: auto;
+  }
+  .van__item:after {
+    right: 315px;
+  }
+  .van__item:nth-child(2n):after {
+    left: 315px;
+  }
 }
 @media (max-width: 991px) {
+  .van__item:after {
+    display: none !important;
+  }
   .menu-btn {
     width: 30px;
     height: 30px;
@@ -2100,6 +2204,12 @@ html *::-webkit-scrollbar-thumb {
   .close-popup {
     right: 11%;
   }
+  .news-detail {
+    padding: 40px 0 100px;
+  }
+  .header .swiper-pagination-bullet-custom:not(:last-child) {
+    margin-right: 1px;
+  }
 }
 @media screen and (max-width: 767px) {
   .swiper {
@@ -2167,6 +2277,9 @@ html *::-webkit-scrollbar-thumb {
   .close-popup {
     right: 22%;
   }
+  .news .news__item:before {
+    height: 207px;
+  }
 }
 @media screen and (max-width: 576px) {
   input, textarea, select {
@@ -2220,7 +2333,7 @@ html *::-webkit-scrollbar-thumb {
   }
   .author__item img {
     width: 100%;
-    height: 454px;
+    height: auto;
   }
   .author__right {
     max-width: 100%;
@@ -2240,7 +2353,7 @@ html *::-webkit-scrollbar-thumb {
     margin: 0px 0 40px 32px;
   }
   #map {
-    height: 687px;
+    height: 450px;
   }
   .footer__form {
     flex-direction: column;
@@ -2297,7 +2410,7 @@ html *::-webkit-scrollbar-thumb {
     padding: 40px 0;
   }
   .team__box .author__item img {
-    height: 518px;
+    height: auto;
   }
   .news__item a {
     font-size: 12px;
@@ -2333,7 +2446,8 @@ html *::-webkit-scrollbar-thumb {
     padding: 120px 0 220px;
   }
   .ymaps-2-1-79-image {
-    width: 200px !important;
+    width: 220px !important;
+    height: 80px !important;
     background-size: 100% !important;
     background-repeat: no-repeat !important;
   }
@@ -2432,10 +2546,24 @@ html *::-webkit-scrollbar-thumb {
   .box .swiper-button-next, .box .swiper-button-prev {
     display: none;
   }
+  .header .swiper-pagination-bullet-custom--active:after {
+    width: 15px;
+    height: 15px;
+    left: 0.5px;
+    top: 0.5px;
+  }
+  .text-main {
+    padding: 120px 0 157px;
+  }
 }
 @media screen and (min-width: 400px) and (max-width: 576px) {
   .project-view .menu2.active {
-    bottom: 11%;
+    bottom: 12%;
+  }
+}
+@media screen and (min-width: 525px) and (max-width: 576px) {
+  .project-view .menu2.active {
+    bottom: 12.8%;
   }
 }
 @media screen and (max-width: 340px) {
@@ -2444,5 +2572,11 @@ html *::-webkit-scrollbar-thumb {
   }
   .pub__item {
     width: 48%;
+  }
+  .project-view .swiper-button-prev {
+    left: 33%;
+  }
+  .project-view .swiper-button-next {
+    right: 33%;
   }
 }

@@ -128,9 +128,9 @@
 				</div>
 			</div>
 			<div class="menu2">
-				<p>
+				<h1>
 					Акварельная фантазия
-				</p>
+				</h1>
 				<p>
 					В целом, конечно, синтетическое тестирование способствует повышению качества инновационных методов управления процессами. Ясность нашей позиции очевидна: консультация с широким активом обеспечивает актуальность новых принципов формирования материально-технической и кадровой базы. Но социально-экономическое развитие прекрасно подходит для реализации системы обучения кадров, соответствующей насущным потребностям. Не следует, однако, забывать, что перспективное планирование напрямую зависит от модели развития. Задача организации, в особенности же глубокий уровень погружения позволяет выполнить важные задания по разработке анализа существующих поведения!
 				</p>
@@ -190,11 +190,6 @@
 		</footer>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script type="module">
-		import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-	  
-		const swiper = new Swiper(...)
-	</script>
 	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script type="text/javascript">
 	ymaps.ready(init);
@@ -236,6 +231,29 @@
 		myMap.behaviors.disable('scrollZoom');
 	
 	}
+	</script>
+	<script>
+		const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
 	</script>    
 	<script src="js/all.js"></script>
 </body>
