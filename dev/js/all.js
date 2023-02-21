@@ -1,4 +1,29 @@
-
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazy");
+  var lazyloadThrottleTimeout;
+  function lazyload () {
+  if(lazyloadThrottleTimeout) {
+  clearTimeout(lazyloadThrottleTimeout);
+  }
+  lazyloadThrottleTimeout = setTimeout(function() {
+  var scrollTop = window.pageYOffset;
+  lazyloadImages.forEach(function(img) {
+  if(img.offsetTop < (window.innerHeight + scrollTop)) {
+  img.src = img.dataset.src;
+  img.classList.remove('lazy');
+  }
+  });
+  if(lazyloadImages.length == 0) {
+  document.removeEventListener("scroll", lazyload);
+  window.removeEventListener("resize", lazyload);
+  window.removeEventListener("orientationChange", lazyload);
+  }
+  }, 20);
+  }
+  document.addEventListener("scroll", lazyload);
+  window.addEventListener("resize", lazyload);
+  window.addEventListener("orientationChange", lazyload);
+  });
 var cursor = document.querySelector('.cursor');
 var cursorinner = document.querySelector('.cursor2');
 var a = document.querySelectorAll('.swiper-button-prev');
@@ -153,4 +178,15 @@ menuBtn.addEventListener('click', function(){
 	menuBtn.classList.toggle('active');
 	menu.classList.toggle('active');
 });
-
+let cls = document.querySelector('.cls');
+let menu2 = document.querySelector('.menu2');
+cls.addEventListener('click', function(){
+cls.classList.toggle('active');
+menu2.classList.remove('active');
+});
+let cls2 = document.querySelector('.cls');
+let menuBtn3 = document.querySelector('.menu-btn2');
+cls2.addEventListener('click', function(){
+cls2.classList.toggle('active');
+menuBtn3.classList.remove('active');
+});

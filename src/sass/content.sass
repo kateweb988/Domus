@@ -60,7 +60,7 @@
       &:after 
          content: ""
          display: block
-         width: 12px
+         width: 14px
          height: 8px
          background: url(/img/arr-right.svg) no-repeat
          position: relative
@@ -445,10 +445,24 @@
       margin-left: 12px
       border: 1px solid transparent
       transition: 0.5s
+      position: relative
+      img 
+         position: absolute
+         transition: 0.5s
+      .icon1
+         z-index: 1
+         opacity: 1
+      .icon2
+         z-index: 0
+         opacity: 0
       &:hover 
          border: 1px solid $black
          svg 
             fill: $black
+         .icon1
+            opacity: 0
+         .icon2
+            opacity: 1
       svg 
          height: 16px
          width: 16px
@@ -471,13 +485,20 @@
    &__form 
       max-width: 645px
       width: 100%
+      div 
+         width: 35.2%
+         height: 60px
+         &:nth-child(2)
+            display: none
+         p 
+            font-size: 12px
       input 
          padding-left: 30px
          font-size: 14px
          background: transparent
          transition: 0.5s
-         width: 35.2%
-         height: 60px
+         width: 100%
+         height: 100%
          border: 1px solid rgba(44, 44, 44, 0.2)
       .input1
          border-right: none
@@ -562,6 +583,17 @@
       width: max-content
       margin: 0 auto
       transition: 0.5s
+      position: relative
+      padding-right: 27px
+      img 
+         position: absolute
+         transition: 0.5s
+         right: 0
+         top: 4px
+      .rel
+         opacity: 1
+      .rel2 
+         opacity: 0
       svg
          width: 12px
          height: 12px
@@ -572,6 +604,10 @@
          border-bottom: 1px solid $grey
          svg 
             fill: $grey
+         .rel 
+            opacity: 0
+         .rel2 
+            opacity: 1
    &__box 
       justify-content: space-between
       flex-wrap: wrap
@@ -580,7 +616,23 @@
       text-align: center
       margin-bottom: 50px
       position: relative
-      img 
+      .a1 
+         width: 11px
+         height: 12px
+         opacity: 1
+         position: absolute
+         right: 0
+         top: 4px
+         transition: 0.3s
+      .a2 
+         width: 11px
+         height: 12px
+         opacity: 0
+         position: absolute
+         right: 0
+         top: 4px
+         transition: 0.3s
+      >img 
          width: 100%
          height: 330px
          object-fit: cover
@@ -610,6 +662,8 @@
          font-weight: 500
          padding-bottom: 5px
          transition: 0.5s
+         position: relative
+         padding-right: 25px
          svg 
             fill: #B3B3B3
             width: 12px
@@ -626,6 +680,11 @@
                position: relative
                left: 5px
                transition: 0.5s
+            .a1 
+               opacity: 0
+            .a2 
+               opacity: 1
+               right: -10px
    &__links 
       margin-bottom: 50px
       a 
@@ -1014,6 +1073,12 @@
          font-size: 14px
          border: none
          margin-bottom: 10px
+         transition: 0.5s
+         border-bottom: 1px solid transparent
+         &:hover 
+            cursor: pointer
+            color: $grey
+            border-bottom: 1px solid #CCBBA3
       p 
          font-size: 16px
          line-height: 140%
@@ -1115,8 +1180,6 @@
       span 
          font-size: 14px
          color: white
-
-
 .box
    cursor: none
    a:after 
@@ -1216,3 +1279,55 @@
 #text3 
    h1 
       margin-bottom: 0
+.about-author
+   border-bottom: none
+.cls 
+   position: absolute
+   right: 42px
+   top: 5px
+   width: 20px
+   height: 50px
+   fill: white
+   background: none
+   border: none
+   outline: none
+   &:hover 
+      fill: $black
+.note 
+   position: fixed
+   bottom: 0
+   left: 0
+   width: 100%
+   padding: 40px 160px
+   background: #FFFFFF
+   z-index: 10000
+   display: flex
+   align-items: center
+   justify-content: space-between
+   border-top: 1px solid rgba(44, 44, 44, 0.2)
+   justify-content: center
+   margin: 0 auto
+   p 
+      font-size: 14px
+      line-height: 140%
+      color: #2C3039
+      margin-right: 150px
+      max-width: 794px
+   a
+      flex: 1 0 auto 
+      max-width: 176px
+      &:hover 
+         color: white
+.help 
+   display: none
+   font-size: 0.8em
+   text-align: center
+   margin: 0.2em 0 1em 0
+   color: #c00
+.invalid .help 
+   display: block
+   text-align: left
+.invalid label, .invalid input 
+   color: #c00
+   border-color: #c00
+   border-right: 0.5px solid #c00 !important

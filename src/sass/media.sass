@@ -1,3 +1,45 @@
+@media screen and (min-width: 1920px)
+   .van__item:nth-child(2n):after
+      left: 715px
+   .container 
+      max-width: 1520px
+   .header .swiper
+      height: 900px
+   .author__item
+      max-width: 1240px
+   .author__item img
+      width: 480px
+      height: 632px
+   .van__item img 
+      width: 933.33px
+      height: 586.67px
+   .van__item:after
+      right: 715px
+   .van__item:nth-child(2n)
+      justify-content: flex-start
+      img 
+         margin-right: 80px
+   .about__box
+      max-width: 1191px
+   .project-view__box.box 
+      cursor: initial
+      .swiper-button-next
+         right: -90% !important
+         width: 140%
+         height: 76vh
+         top: inherit
+         bottom: 4%
+      .swiper-button-prev
+         left: -74% !important
+         width: 125%
+         height: 76vh
+         top: inherit
+         bottom: 4%
+      .cursor
+         right: 94%
+         top: 0px
+   .project-view .swiper-button-next img, .project-view .swiper-button-prev img
+      opacity: 0
 @media screen and (max-width: 1920px)
    .box .swiper-button-next, .box .swiper-button-prev
       width: 140%
@@ -11,6 +53,74 @@
    .box .swiper-button-next
       right: -70% !important
       left: inherit !important
+   .container 
+      max-width: 1520px
+   .author__item
+      max-width: 1240px
+   .author__item img
+      width: 480px
+      height: 632px
+   .van__item img 
+      height: 586.67px
+      width: 933.33px
+   .van__item:nth-child(2n)
+      justify-content: flex-start
+      img 
+         margin-right: 80px
+   .van__item:after
+      right: 715px
+   .van__item:nth-child(2n):after
+      left: 715px
+   .about__box
+      max-width: 1191px
+   .project-view .swiper-button-next img, .project-view .swiper-button-prev img
+      opacity: 0
+   .project-view__box.box 
+      cursor: initial
+      .swiper-button-next
+         right: -90% !important
+         width: 140%
+         height: 76vh
+         top: inherit
+         bottom: 4%
+      .swiper-button-prev
+         left: -74% !important
+         width: 125%
+         height: 76vh
+         top: inherit
+         bottom: 4%
+      .cursor
+         right: 94%
+         top: 0px
+@media screen and (max-width: 1600px)
+   .container 
+      max-width: 1152px
+   .author__item img
+      width: 360px
+      height: 474px
+   .van__item img
+      width: 700px
+      height: 440px
+   .van__item:nth-child(2n)
+      justify-content: space-between
+      img 
+         margin-right: 0px
+   .van__item:after
+      right: 480px
+   .van__item:nth-child(2n):after
+      left: 480px
+   .about__box
+      max-width: 930px
+   .project-view__box.box 
+      .swiper-button-next
+         height: 730px
+         bottom: 73px
+      .swiper-button-prev
+         height: 730px
+         bottom: 73px
+      .cursor
+         right: 94%
+         top: 0px
 @media screen and (max-width: 1199px)
    .van__item img
       width: 57%
@@ -92,6 +202,20 @@
       right: 315px
    .van__item:nth-child(2n):after
       left: 315px
+   .project-view__box.box 
+      .swiper-button-next
+         height: 502px
+         bottom: 172px
+      .swiper-button-prev
+         height: 502px
+         bottom: 172px
+      .cursor
+         right: 94%
+         top: 0px
+   .note
+      padding: 20px
+      p
+         margin-right: 40px
 @media ( max-width: 991px )
    .van__item:after
       display: none !important
@@ -255,6 +379,39 @@
       padding: 40px 0 100px
    .header .swiper-pagination-bullet-custom:not(:last-child)
       margin-right: 1px
+   .cursor
+      opacity: 0
+   .project-view__box.box
+      .swiper-button-prev 
+         bottom: 62px
+         left: 40% !important
+         right: inherit !important
+         z-index: 4
+         top: inherit
+         height: 48px
+         width: 48px
+         z-index: 3
+         img 
+            opacity: 1
+      .swiper-button-next
+         bottom: 62px
+         right: 40% !important
+         left: inherit !important
+         z-index: 4
+         top: inherit
+         height: 48px
+         width: 48px
+         z-index: 3
+         img 
+            opacity: 1
+   .cls 
+      right: 20px
+      top: -65px
+      z-index: 2
+   .project-view .swiper-button-next:hover img, .project-view .swiper-button-prev:hover img
+      max-width: 50px
+   .note p
+      font-size: 13px
 @media screen and (max-width: 767px)
    .swiper
       height: 100%
@@ -304,6 +461,11 @@
       right: 22%
    .news .news__item:before
       height: 207px
+   .note p
+      font-size: 12px
+   .note a 
+      max-width: 108px
+      height: 40px
 @media screen and (max-width: 576px)
    input, textarea, select
       -webkit-appearance: none
@@ -361,7 +523,7 @@
    .footer__form
       flex-direction: column
    .footer__form
-      input
+      div
          height: 60px
          width: 100%
       .btn
@@ -434,7 +596,8 @@
    .partner .news__item img
       height: 214px
    .project-view .swiper
-      height: 300px
+      height: auto
+      margin-top: 25%
    .project-view .menu-btn2
       margin-top: 80px
    .project-view .swiper-button-prev
@@ -450,7 +613,7 @@
    .project-view .menu2.active
       padding: 80px 0 128px
       max-height: 580px
-      bottom: 13%
+      bottom: 25%
    .project-view .menu2.active::before
       height: 177px
       top: inherit
@@ -502,18 +665,65 @@
       top: 0.5px
    .text-main 
       padding: 120px 0 157px
-@media screen and (min-width: 400px) and (max-width: 576px)
-   .project-view .menu2.active 
-      bottom: 12%
-@media screen and (min-width: 525px) and (max-width: 576px)
-   .project-view .menu2.active
-      bottom: 12.8%
+   .project-view__box.box
+      .swiper-button-next
+         display: block
+         height: 20px
+         width: 32px
+         img 
+            width: 29px
+      .swiper-button-prev
+         display: block
+         width: 32px
+         height: 20px
+         img 
+            width: 29px
+   .cls 
+      right: 8px
+      top: 10px
+      z-index: 2
+      width: 12px
+      height: 12px
+   .project-view .menu-btn2
+      position: relative
+      top: 0
+      max-width: 380px
+   .project-view .menu-btn2.active:hover
+      position: relative
+      top: -180px
+   .project-view .menu2.active p:nth-child(2)
+      max-width: 336px
+   .note
+      flex-direction: column
+      text-align: center
+      padding: 10px
+      p 
+         margin-right: 0
+         margin-bottom: 10px
+         font-size: 10px
+   .help
+      margin: -6.2em 0 1em 7px
+      font-size: 10px !important
+   .invalid input 
+      border: 1px solid #c00 !important
+@media screen and (max-width: 460px)
+   .project-view .menu-btn2.active:hover
+      top: -144px
+@media screen and (max-width: 380px)
+   .project-view .menu-btn2.active:hover
+      top: -126px
 @media screen and (max-width: 340px)
-   .project-view .menu2.active
-      bottom: 14%
    .pub__item
       width: 48%
    .project-view .swiper-button-prev
       left: 33%
    .project-view .swiper-button-next
       right: 33%
+   .project-view .menu2.active p:nth-child(2)
+      max-width: 300px
+   .project-view .menu-btn2.active:hover
+      top: -100px
+   .project-view__box.box .swiper-button-prev
+      left: 38% !important
+   .project-view__box.box .swiper-button-next
+      right: 38% !important

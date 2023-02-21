@@ -94,7 +94,7 @@
 		</header>
 		<section class="project-view" id="project-view">
 			<div class="container">
-				<div class="project-view__box">
+				<div class="project-view__box box">
 					<div class="swiper">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
@@ -125,6 +125,8 @@
 					<div class="menu-btn2">
 						Информация
 					</div>
+					<div class="cursor"></div>
+					<div class="cursor2"></div>
 				</div>
 			</div>
 			<div class="menu2">
@@ -140,6 +142,11 @@
 					Builder: Williams Group <br>
 					Photography: Peter Clarke <br>
 				</p>
+				<button class="cls">
+					<svg class="cls" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0.705882 0L0 0.705882L5.29412 6L0 11.2941L0.705882 12L6 6.70588L11.2941 12L12 11.2941L6.70588 6L12 0.705882L11.2941 0L6 5.29412L0.705882 0Z"/>
+					</svg>
+				</button>
 			</div>
 		</section>
 		<footer class="footer" id="footer">
@@ -170,19 +177,24 @@
 					</p>
 					<div class="footer__socials d-flex">
 						<a href="#" class="footer__link" target="blank">
-							<svg class="icon"><use xlink:href="/img/svg-sprite.svg#soc1"></use></svg>
+							<img src="/img/1.svg" alt="" class="icon1">
+							<img src="/img/11.svg" alt="" class="icon2">
 						</a>
 						<a href="#" class="footer__link" target="blank">
-							<svg class="icon"><use xlink:href="/img/svg-sprite.svg#soc2"></use></svg>
+							<img src="/img/2.svg" alt="" class="icon1">
+							<img src="/img/22.svg" alt="" class="icon2">
 						</a>
 						<a href="#" class="footer__link" target="blank">
-							<svg class="icon"><use xlink:href="/img/svg-sprite.svg#soc3"></use></svg>
+							<img src="/img/3.svg" alt="" class="icon1">
+							<img src="/img/33.svg" alt="" class="icon2">
 						</a>
 						<a href="#" class="footer__link" target="blank">
-							<svg class="icon"><use xlink:href="/img/svg-sprite.svg#soc4"></use></svg>
+							<img src="/img/4.svg" alt="" class="icon1">
+							<img src="/img/44.svg" alt="" class="icon2">
 						</a>
 						<a href="#" class="footer__link" target="blank">
-							<svg class="icon"><use xlink:href="/img/svg-sprite.svg#soc5"></use></svg>
+							<img src="/img/5.svg" alt="" class="icon1">
+							<img src="/img/55.svg" alt="" class="icon2">
 						</a>
 					</div>
 				</div>
@@ -190,48 +202,6 @@
 		</footer>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script type="text/javascript">
-	ymaps.ready(init);
-	
-	function init () {
-		var myMap = new ymaps.Map("map", {
-			// Центр карты, указываем коордианты
-			center:[55.704524, 37.615380],
-			// Масштаб, тут все просто
-			zoom: 12,
-			// Отключаем все элементы управления
-			controls: []
-		}); 
-				
-		var myGeoObjects = [];
-		
-		// Наша метка, указываем коордианты
-		myGeoObjects = new ymaps.Placemark([55.704524, 37.615380],{
-						balloonContentBody: 'DOMUS OPTIMA ',
-						},{
-						iconLayout: 'default#image',
-						// Путь до нашей картинки
-						iconImageHref: '/img/icon.png', 
-						// Размер по ширине и высоте
-						iconImageSize: [340, 150],
-						// Смещение левого верхнего угла иконки относительно
-						// её «ножки» (точки привязки).
-						iconImageOffset: [-35, -35]
-		});
-					
-		var clusterer = new ymaps.Clusterer({
-			clusterDisableClickZoom: false,
-			clusterOpenBalloonOnClick: false,
-		});
-		
-		clusterer.add(myGeoObjects);
-		myMap.geoObjects.add(clusterer);
-		// Отлючаем возможность изменения масштаба
-		myMap.behaviors.disable('scrollZoom');
-	
-	}
-	</script>    
 	<script>
 		const swiper = new Swiper('.swiper', {
     // Optional parameters
