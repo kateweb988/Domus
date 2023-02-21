@@ -1792,6 +1792,7 @@ html *::-webkit-scrollbar-thumb {
   width: 12px;
   height: 12px;
   fill: white;
+  z-index: 20;
 }
 .close-popup:hover {
   transform: rotate(90deg);

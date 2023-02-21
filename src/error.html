@@ -120,9 +120,20 @@
 							Оставьте свои контакты, и мы вышлем портфолио наших работ, после чего обязательно перезвоним. С удовольствием расскажем о наших возможностях и пригласим на кофе в нашу уютную студию в центре Москвы.
 						</p>
 					</div>
-					<form action="#" class="footer__form d-flex">
-						<input type="text" name="name" placeholder="Ваше имя" class="input1" required>
-						<input type="tel" name="tel" class="tel" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+					<form id="myform"class="footer__form d-flex" action="./" method="post">
+						<div>
+							<input type="text" id="name" autocomplete="username" name="name" placeholder="Ваше имя" class="input1" required>
+							<p class="help">Пожалуйста, введите ваше имя</p>
+						</div>
+						<div>
+						  <label for="email">email</label>
+						  <input type="email" autocomplete="email" id="email" name="email" />
+						  <p class="help">Please enter your email or telephone.</p>
+						</div>
+						<div>
+							<input type="tel" autocomplete="tel" id="tel" name="tel" class="tel" placeholder="Телефон" required>
+							<p class="help">Пожалуйста, введите ваш телефон</p>
+						</div>
 						<button type="submit" class="btn">
 							Позвоните мне
 						</button>
@@ -204,6 +215,69 @@
 	
 	}
 	</script>    
+		<script>
+			// ___________________________________________________________________
+// validate contact form
+const myform = document.getElementById('myform');
+myform.noValidate = true;
+
+// custom form validation
+myform.addEventListener('submit', validateForm);
+
+// stop submission of valid form for demo
+myform.addEventListener('submit', e => {
+
+e.preventDefault();
+alert('Form is valid!\n(open the console)');
+
+const fd = new FormData(e.target);
+for (const [name, value] of fd.entries()) {
+console.log(name + ': ' + value);
+}
+
+});
+
+
+// form validation
+function validateForm(e) {
+
+const
+form = e.target,
+field = Array.from(form.elements);
+
+// reset fields
+field.forEach(i => {
+i.setCustomValidity('');
+i.parentElement.classList.remove('invalid');
+});
+
+// email or tel set?
+const err = form.email.value || form.tel.value ? '' : 'error';
+form.email.setCustomValidity(err);
+form.tel.setCustomValidity(err);
+
+if (!form.checkValidity()) {
+
+// form is invalid - cancel submit
+e.preventDefault();
+e.stopImmediatePropagation();
+
+// apply invalid class
+field.forEach(i => {
+
+if (!i.checkValidity()) {
+
+// field is invalid - add class
+i.parentElement.classList.add('invalid');
+
+}
+
+});
+
+}
+
+}
+</script>
 	<script src="js/all.js"></script>
 </body>
 
