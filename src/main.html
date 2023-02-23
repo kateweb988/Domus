@@ -109,11 +109,25 @@
 						  <div class="swiper-slide">
 							<img class="lazy" data-src="/img/img1.png" srcset="/img/2x/img1-2x.png 2x">
 						  </div>
-						  <!-- <div class="swiper-slide video">
-							<video src="https://static.nike.com/a/videos/q_90/3df34bbe-0645-4bb2-98e3-93d686454109/video.mp4" autoplay muted></video>
-						  </div> -->
 						  <div class="swiper-slide">
 							<img src="/img/img1.png" srcset="/img/2x/img1-2x.png 2x">
+						  </div>
+						  <div class="swiper-slide">
+							<video controls muted="muted" crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player" unmute>
+								<!-- Video files -->
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
+				
+								<!-- Caption files -->
+								<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+									default>
+				
+				
+								<!-- Fallback for browsers that don't support the <video> element -->
+								<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+							</video>
 						  </div>
 						  <div class="swiper-slide">
 							<img src="/img/img1.png" srcset="/img/2x/img1-2x.png 2x">
@@ -524,9 +538,8 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<script type="text/javascript">
 	ymaps.ready(init);
 	
@@ -568,49 +581,7 @@
 	
 	}
 	</script>    
-	<script>
-		const swiper = new Swiper('.swiper', {
-		loop: true,
-		autoplay: {
-			delay: 5000,
-			disableOnInteraction: false
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			bulletClass: 'swiper-pagination-bullet-custom',
-			bulletActiveClass: 'swiper-pagination-bullet-custom--active',
-			renderBullet: function(index, className) {
-			return `<div class="${className}" data-index="${index}">
-				<svg viewbox="0 0 20 20">
-					<circle r="9" cx="10" cy="10" fill="none" stroke-width="1.5" stroke="#1A1A1A"/>
-				</svg>
-			</div>`
-			},
-			clickable: true
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		on: {
-			init: function() {
-			const _self = this;
-			
-			_self.el.style.setProperty('--delay', _self.params.autoplay.delay);
-			
-			_self.el.addEventListener('mouseenter', function() {
-				_self.el.classList.add('swiper--pause');
-				_self.autoplay.stop();
-			});
-		
-			_self.el.addEventListener('mouseleave', function() {
-				_self.el.classList.remove('swiper--pause');
-				_self.autoplay.start();
-			});
-			}
-		}
-		});
-	</script>
+	
 	<script>
 						// ___________________________________________________________________
 // validate contact form
@@ -674,6 +645,49 @@ function validateForm(e) {
 
 }
 	</script>
+		<script>
+			const swiper = new Swiper('.swiper', {
+			loop: true,
+			autoplay: {
+				delay: 2200,
+				disableOnInteraction: false
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				bulletClass: 'swiper-pagination-bullet-custom',
+				bulletActiveClass: 'swiper-pagination-bullet-custom--active',
+				renderBullet: function(index, className) {
+				return `<div class="${className}" data-index="${index}">
+					<svg viewbox="0 0 20 20">
+						<circle r="9" cx="10" cy="10" fill="none" stroke-width="1.5" stroke="#1A1A1A"/>
+					</svg>
+				</div>`
+				},
+				clickable: true
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			on: {
+				init: function() {
+				const _self = this;
+				
+				_self.el.style.setProperty('--delay', _self.params.autoplay.delay);
+				
+				_self.el.addEventListener('mouseenter', function() {
+					_self.el.classList.add('swiper--pause');
+					_self.autoplay.stop();
+				});
+			
+				_self.el.addEventListener('mouseleave', function() {
+					_self.el.classList.remove('swiper--pause');
+					_self.autoplay.start();
+				});
+				}
+			}
+			});
+		</script>
 	<script src="js/all.js"></script>
 </body>
 

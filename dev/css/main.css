@@ -423,7 +423,7 @@ html *::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #CCBBA3;
 }
 .nav__link {
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 140%;
@@ -443,7 +443,7 @@ html *::-webkit-scrollbar-thumb {
   padding-bottom: 60px;
 }
 .swiper__all {
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   justify-content: flex-end;
   align-items: center;
   display: flex;
@@ -495,6 +495,11 @@ html *::-webkit-scrollbar-thumb {
   height: 100%;
 }
 .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -854,7 +859,7 @@ html *::-webkit-scrollbar-thumb {
   background: #FFFFFF;
 }
 .map__name {
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 140%;
@@ -955,6 +960,9 @@ html *::-webkit-scrollbar-thumb {
   width: 16px;
   fill: #C7C7C7;
 }
+.footer__link:nth-child(1) {
+  padding: 1px 2px 0 0;
+}
 .footer__link:nth-child(1) svg {
   width: 15px;
   height: 13px;
@@ -1013,7 +1021,7 @@ html *::-webkit-scrollbar-thumb {
 .text h1 {
   margin: 0 auto 16px;
   font-size: 16px;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   color: #1A1A1A;
@@ -1029,7 +1037,7 @@ html *::-webkit-scrollbar-thumb {
 .about-text h1 {
   margin: 0 auto 16px;
   font-size: 16px;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   color: #1A1A1A;
@@ -1092,7 +1100,7 @@ html *::-webkit-scrollbar-thumb {
   line-height: 140%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   padding-bottom: 5px;
   display: flex;
@@ -1180,7 +1188,7 @@ html *::-webkit-scrollbar-thumb {
   line-height: 140%;
   text-transform: uppercase;
   color: #1A1A1A;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   margin-bottom: 7px;
   transition: 0.5s;
@@ -1191,7 +1199,7 @@ html *::-webkit-scrollbar-thumb {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-size: 14px;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   padding-bottom: 5px;
   transition: 0.5s;
@@ -1232,7 +1240,7 @@ html *::-webkit-scrollbar-thumb {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #1A1A1A;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   font-size: 14px;
   transition: 0.5s !important;
@@ -1267,7 +1275,7 @@ html *::-webkit-scrollbar-thumb {
   font-size: 14px;
   line-height: 140%;
   text-transform: uppercase;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 
@@ -1287,7 +1295,7 @@ html *::-webkit-scrollbar-thumb {
   line-height: 140%;
   text-transform: uppercase;
   color: #1A1A1A;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   border: none;
   margin-bottom: 10px;
@@ -1309,7 +1317,7 @@ html *::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   color: #CCBBA3;
   margin-bottom: 30px;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 
@@ -1335,14 +1343,14 @@ html *::-webkit-scrollbar-thumb {
   font-size: 14px;
   line-height: 140%;
   text-transform: uppercase;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 .error__num {
   font-size: 120px;
   line-height: 140%;
   text-transform: uppercase;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 .error__text {
@@ -1377,7 +1385,7 @@ html *::-webkit-scrollbar-thumb {
   line-height: 140%;
   text-transform: uppercase;
   color: #1A1A1A;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 .contacts__mail {
@@ -1402,7 +1410,7 @@ html *::-webkit-scrollbar-thumb {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #1A1A1A;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   margin-right: 20px;
   border-bottom: 1px solid transparent;
@@ -1418,10 +1426,6 @@ html *::-webkit-scrollbar-thumb {
 
 .project .news__item:hover:before, .news .news__item:hover:before {
   opacity: 1;
-}
-
-.partner .news__item:hover:before {
-  height: 340px;
 }
 
 .news .news__item:before {
@@ -1476,7 +1480,7 @@ html *::-webkit-scrollbar-thumb {
   margin-bottom: 10px;
 }
 .partner .news__item p {
-  font-family: "Futura PT Book";
+  font-family: "Futura PT Book", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
@@ -1500,7 +1504,7 @@ html *::-webkit-scrollbar-thumb {
   line-height: 140%;
   text-transform: uppercase;
   margin-bottom: 11px;
-  font-family: "Futura PT Book";
+  font-family: "Futura PT Book", sans-serif;
   color: #1A1A1A;
 }
 .atelier__content p {
@@ -1572,7 +1576,7 @@ html *::-webkit-scrollbar-thumb {
   padding-bottom: 3px;
   border-bottom: 1px solid #CCBBA3;
   width: max-content;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
   margin: 50px auto 100px;
   transition: 0.5s;
@@ -1611,7 +1615,7 @@ html *::-webkit-scrollbar-thumb {
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
-  font-family: "Futura PT";
+  font-family: "Futura PT", sans-serif;
   font-weight: 500;
 }
 .project-view .menu2.active p:nth-child(2) {
@@ -1899,7 +1903,7 @@ html *::-webkit-scrollbar-thumb {
 }
 
 .hover {
-  background: url(/img/ll.png) no-repeat !important;
+  background: url(/img/ll2.png) no-repeat !important;
   width: 70px;
   height: 20px;
   -webkit-appearance: none;
@@ -1916,7 +1920,7 @@ html *::-webkit-scrollbar-thumb {
 }
 
 .hover2 {
-  background: url(/img/rr.png) no-repeat !important;
+  background: url(/img/rr2.png) no-repeat !important;
   width: 70px;
   height: 32px;
   -webkit-appearance: none;
@@ -1924,7 +1928,7 @@ html *::-webkit-scrollbar-thumb {
   background-color: white;
   border: none;
   outline: none;
-  background-size: 27% !important;
+  background-size: 54% !important;
 }
 
 .project-view .swiper-button-next, .project-view .swiper-button-prev {
@@ -1955,14 +1959,15 @@ html *::-webkit-scrollbar-thumb {
 
 .cls {
   position: absolute;
-  right: 42px;
-  top: 5px;
+  right: 15px;
+  top: -24px;
   width: 20px;
   height: 50px;
   fill: white;
   background: none;
   border: none;
   outline: none;
+  z-index: 1;
 }
 .cls:hover {
   fill: #1A1A1A;
@@ -2018,6 +2023,16 @@ html *::-webkit-scrollbar-thumb {
 }
 
 @media screen and (min-width: 1920px) {
+  .popup .box .swiper-button-next {
+    top: -13%;
+    height: 61vh;
+    right: -58%;
+  }
+  .popup .box .swiper-button-prev {
+    left: -58%;
+    top: -13%;
+    height: 61vh;
+  }
   .van__item:nth-child(2n):after {
     left: 715px;
   }
@@ -2056,16 +2071,16 @@ html *::-webkit-scrollbar-thumb {
   .project-view__box.box .swiper-button-next {
     right: -90% !important;
     width: 140%;
-    height: 76vh;
+    height: 89vh;
     top: inherit;
-    bottom: 4%;
+    bottom: 8%;
   }
   .project-view__box.box .swiper-button-prev {
     left: -74% !important;
     width: 125%;
-    height: 76vh;
+    height: 89vh;
     top: inherit;
-    bottom: 4%;
+    bottom: 8%;
   }
   .project-view__box.box .cursor {
     right: 94%;
@@ -2073,6 +2088,52 @@ html *::-webkit-scrollbar-thumb {
   }
   .project-view .swiper-button-next img, .project-view .swiper-button-prev img {
     opacity: 0;
+  }
+  .team__box .author__item img {
+    height: 720px;
+  }
+  .project .news__item:before, .project .news__item img {
+    height: 320px;
+  }
+  .news .news__item:before, .partner .news__item img, .news__item > img, .news .news__item:before {
+    height: 453px;
+  }
+  .project-view .swiper {
+    height: 840px;
+  }
+  .news-detail img {
+    width: 733px;
+    height: 450px;
+  }
+  .news-detail__content {
+    max-width: 36%;
+  }
+  .news-detail__top {
+    margin-bottom: 27px;
+  }
+  .project .news__item:before {
+    height: 320px;
+  }
+  .pub__item img {
+    width: 353.33px;
+    height: 506.67px;
+  }
+  .contacts #map {
+    width: 1073.33px;
+    height: 666.67px;
+  }
+  .author__content p {
+    width: 76%;
+  }
+  .team .author__content p {
+    margin: 0 auto;
+  }
+  .cursor {
+    right: 140%;
+    top: -146px;
+  }
+  .services__item p {
+    width: 76%;
   }
 }
 @media screen and (max-width: 1920px) {
@@ -2129,20 +2190,66 @@ html *::-webkit-scrollbar-thumb {
   .project-view__box.box .swiper-button-next {
     right: -90% !important;
     width: 140%;
-    height: 76vh;
+    height: 89vh;
     top: inherit;
-    bottom: 4%;
+    bottom: 8%;
   }
   .project-view__box.box .swiper-button-prev {
     left: -74% !important;
     width: 125%;
-    height: 76vh;
+    height: 89vh;
     top: inherit;
-    bottom: 4%;
+    bottom: 8%;
   }
   .project-view__box.box .cursor {
     right: 94%;
     top: 0px;
+  }
+  .team__box .author__item img {
+    height: 720px;
+  }
+  .project .news__item:before, .project .news__item img {
+    height: 320px;
+  }
+  .news .news__item:before, .partner .news__item img, .news__item > img, .news .news__item:before {
+    height: 453px;
+  }
+  .project-view .swiper {
+    height: 840px;
+  }
+  .news-detail img {
+    width: 733px;
+    height: 450px;
+  }
+  .news-detail__content {
+    max-width: 36%;
+  }
+  .news-detail__top {
+    margin-bottom: 27px;
+  }
+  .project .news__item:before {
+    height: 320px;
+  }
+  .pub__item img {
+    width: 353.33px;
+    height: 506.67px;
+  }
+  .contacts #map {
+    width: 1073.33px;
+    height: 666.67px;
+  }
+  .author__content p {
+    width: 76%;
+  }
+  .cursor {
+    right: 140%;
+    top: -146px;
+  }
+  .team .author__content p {
+    margin: 0 auto;
+  }
+  .services__item p {
+    width: 76%;
   }
 }
 @media screen and (max-width: 1600px) {
@@ -2184,8 +2291,71 @@ html *::-webkit-scrollbar-thumb {
     right: 94%;
     top: 0px;
   }
+  .news-detail img {
+    width: 550px;
+    height: 338px;
+  }
+  .news-detail__content {
+    max-width: 100%;
+  }
+  .team__box .author__item img {
+    width: 360px;
+    height: 474px;
+  }
+  .author__item {
+    max-width: 930px;
+  }
+  .news .news__item:before, .partner .news__item img, .news__item > img, .news .news__item:before {
+    height: 330px;
+  }
+  .project .news__item:before {
+    height: 240px;
+  }
+  .project .news__item img {
+    height: 240px;
+  }
+  .pub__item img {
+    width: 265px;
+    height: 380px;
+  }
+  .contacts #map {
+    width: 805px;
+    height: 500px;
+  }
+  .project-view .swiper {
+    height: 730px;
+  }
+  .author__content p {
+    width: 100%;
+  }
+  .note__close {
+    flex: 1 0 auto;
+    max-width: 176px;
+  }
+  .news-detail__top p {
+    margin-bottom: 0;
+  }
+  .services__item p {
+    width: 100%;
+  }
+  .project-view .menu2.active:before {
+    height: 111px;
+    top: -101px;
+  }
+  .cls {
+    top: -44px;
+  }
+  .project-view .menu2.active {
+    z-index: 3;
+  }
+  .project-view .menu-btn2.active {
+    z-index: 4;
+  }
 }
 @media screen and (max-width: 1199px) {
+  .van__item:after {
+    display: none;
+  }
   .van__item img {
     width: 57%;
   }
@@ -2309,6 +2479,32 @@ html *::-webkit-scrollbar-thumb {
   }
   .note p {
     margin-right: 40px;
+  }
+  .container {
+    max-width: 960px;
+  }
+  .team__box .author__item img {
+    width: 100%;
+    height: auto;
+  }
+  .cls {
+    right: 11px;
+    top: -76px;
+  }
+  .project-view .menu2.active {
+    bottom: 3%;
+    z-index: 3;
+  }
+  .project-view .menu2.active:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 253px;
+    position: absolute;
+    bottom: -247px;
+    left: 0;
+    z-index: 1;
+    background: #B3ABA1;
   }
 }
 @media (max-width: 991px) {
@@ -2561,8 +2757,8 @@ html *::-webkit-scrollbar-thumb {
     opacity: 1;
   }
   .cls {
-    right: 20px;
-    top: -65px;
+    right: 12px;
+    top: -74px;
     z-index: 2;
   }
   .project-view .swiper-button-next:hover img, .project-view .swiper-button-prev:hover img {
@@ -2570,6 +2766,30 @@ html *::-webkit-scrollbar-thumb {
   }
   .note p {
     font-size: 13px;
+  }
+  .note__close {
+    flex: 1 0 auto;
+    max-width: 176px;
+  }
+  .container {
+    max-width: 720px;
+  }
+  .project-view .swiper {
+    height: auto;
+  }
+  .project-view .menu2.active {
+    bottom: 6%;
+  }
+  .project-view .menu2.active:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 253px;
+    position: absolute;
+    bottom: -247px;
+    left: 0;
+    z-index: 1;
+    background: #B3ABA1;
   }
 }
 @media screen and (max-width: 767px) {
@@ -2580,7 +2800,7 @@ html *::-webkit-scrollbar-thumb {
     max-width: 69.85%;
   }
   .van__item img {
-    height: 217px;
+    height: auto;
     width: 75%;
   }
   .about__item {
@@ -2647,6 +2867,23 @@ html *::-webkit-scrollbar-thumb {
   .note a {
     max-width: 108px;
     height: 40px;
+  }
+  .container {
+    max-width: 540px;
+  }
+  .project-view .menu2.active::before {
+    height: 198px;
+    top: -196px;
+  }
+  .project-view .menu2.active {
+    bottom: 11%;
+  }
+  .project-view .menu2.active:after {
+    height: 358px;
+    bottom: -353px;
+  }
+  .cls {
+    top: -94px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -2752,6 +2989,7 @@ html *::-webkit-scrollbar-thumb {
   }
   .text__bg {
     top: 40px;
+    object-fit: cover;
   }
   button:active, button:focus {
     outline: none;
@@ -2775,7 +3013,7 @@ html *::-webkit-scrollbar-thumb {
     padding: 80px 0;
   }
   .team {
-    padding: 40px 0;
+    padding: 40px 0 100px;
   }
   .team__box .author__item img {
     height: auto;
@@ -2852,12 +3090,12 @@ html *::-webkit-scrollbar-thumb {
   .project-view .menu2.active {
     padding: 80px 0 128px;
     max-height: 580px;
-    bottom: 25%;
+    bottom: 17%;
   }
   .project-view .menu2.active::before {
-    height: 177px;
+    height: 297px;
     top: inherit;
-    bottom: -160px;
+    bottom: -291px;
   }
   .pub__item p {
     max-width: 90%;
@@ -2922,7 +3160,8 @@ html *::-webkit-scrollbar-thumb {
     top: 0.5px;
   }
   .text-main {
-    padding: 120px 0 157px;
+    padding: 150px 0 157px;
+    margin-top: -20px;
   }
   .project-view__box.box .swiper-button-next {
     display: block;
@@ -2952,10 +3191,6 @@ html *::-webkit-scrollbar-thumb {
     top: 0;
     max-width: 380px;
   }
-  .project-view .menu-btn2.active:hover {
-    position: relative;
-    top: -180px;
-  }
   .project-view .menu2.active p:nth-child(2) {
     max-width: 336px;
   }
@@ -2976,15 +3211,46 @@ html *::-webkit-scrollbar-thumb {
   .invalid input {
     border: 1px solid #c00 !important;
   }
-}
-@media screen and (max-width: 460px) {
-  .project-view .menu-btn2.active:hover {
-    top: -144px;
+  .note__close {
+    height: 40px;
+    max-width: 150px;
+  }
+  .team__box .author__item img {
+    width: 100%;
+  }
+  .news__item img {
+    height: auto;
+  }
+  .pub__pic:after {
+    height: 100%;
+  }
+  .pub__item img {
+    height: auto;
+  }
+  .project .news__item:before {
+    height: 240px;
+  }
+  .partner .news__item:before {
+    height: 214px;
+  }
+  .van__content {
+    max-width: 100%;
+  }
+  .project-view .menu-btn2.active {
+    top: -100px;
   }
 }
-@media screen and (max-width: 380px) {
-  .project-view .menu-btn2.active:hover {
-    top: -126px;
+@media screen and (max-width: 500px) {
+  .project-view .menu-btn2.active {
+    top: -165px;
+  }
+  .project-view .menu2.active {
+    bottom: 25%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .project-view .menu2.active {
+    bottom: 28%;
   }
 }
 @media screen and (max-width: 340px) {
@@ -3000,13 +3266,22 @@ html *::-webkit-scrollbar-thumb {
   .project-view .menu2.active p:nth-child(2) {
     max-width: 300px;
   }
-  .project-view .menu-btn2.active:hover {
-    top: -100px;
+  .project-view .menu-btn2.active {
+    top: -137px;
   }
   .project-view__box.box .swiper-button-prev {
     left: 38% !important;
   }
   .project-view__box.box .swiper-button-next {
     right: 38% !important;
+  }
+  .mySwiper2 .swiper-slide img {
+    max-width: 260px;
+  }
+  .popup__flex p {
+    width: 80%;
+  }
+  .close-popup {
+    right: 34%;
   }
 }

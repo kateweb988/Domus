@@ -1,4 +1,13 @@
 @media screen and (min-width: 1920px)
+   .popup .box
+      .swiper-button-next
+         top: -13% 
+         height: 61vh
+         right: -58%
+      .swiper-button-prev
+         left: -58%
+         top: -13%
+         height: 61vh
    .van__item:nth-child(2n):after
       left: 715px
    .container 
@@ -26,20 +35,52 @@
       .swiper-button-next
          right: -90% !important
          width: 140%
-         height: 76vh
+         height: 89vh
          top: inherit
-         bottom: 4%
+         bottom: 8%
       .swiper-button-prev
          left: -74% !important
          width: 125%
-         height: 76vh
+         height: 89vh
          top: inherit
-         bottom: 4%
+         bottom: 8%
       .cursor
          right: 94%
          top: 0px
    .project-view .swiper-button-next img, .project-view .swiper-button-prev img
       opacity: 0
+   .team__box .author__item img
+      height: 720px
+   .project .news__item:before, .project .news__item img
+      height: 320px
+   .news .news__item:before, .partner .news__item img, .news__item > img, .news .news__item:before
+      height: 453px
+   .project-view .swiper
+      height: 840px
+   .news-detail img
+      width: 733px
+      height: 450px
+   .news-detail__content
+      max-width: 36%
+   .news-detail__top 
+      margin-bottom: 27px
+   .project .news__item:before
+      height: 320px
+   .pub__item img
+      width: 353.33px
+      height: 506.67px
+   .contacts #map
+      width: 1073.33px
+      height: 666.67px
+   .author__content p
+      width: 76%
+   .team .author__content p
+      margin: 0 auto
+   .cursor
+      right: 140%
+      top: -146px
+   .services__item p
+      width: 76%
 @media screen and (max-width: 1920px)
    .box .swiper-button-next, .box .swiper-button-prev
       width: 140%
@@ -80,18 +121,50 @@
       .swiper-button-next
          right: -90% !important
          width: 140%
-         height: 76vh
+         height: 89vh
          top: inherit
-         bottom: 4%
+         bottom: 8%
       .swiper-button-prev
          left: -74% !important
          width: 125%
-         height: 76vh
+         height: 89vh
          top: inherit
-         bottom: 4%
+         bottom: 8%
       .cursor
          right: 94%
          top: 0px
+   .team__box .author__item img
+      height: 720px
+   .project .news__item:before, .project .news__item img
+      height: 320px
+   .news .news__item:before, .partner .news__item img, .news__item > img, .news .news__item:before
+      height: 453px
+   .project-view .swiper
+      height: 840px
+   .news-detail img
+      width: 733px
+      height: 450px
+   .news-detail__content
+      max-width: 36%
+   .news-detail__top 
+      margin-bottom: 27px
+   .project .news__item:before
+      height: 320px
+   .pub__item img
+      width: 353.33px
+      height: 506.67px
+   .contacts #map
+      width: 1073.33px
+      height: 666.67px
+   .author__content p
+      width: 76%
+   .cursor
+      right: 140%
+      top: -146px
+   .team .author__content p
+      margin: 0 auto
+   .services__item p
+      width: 76%
 @media screen and (max-width: 1600px)
    .container 
       max-width: 1152px
@@ -121,7 +194,51 @@
       .cursor
          right: 94%
          top: 0px
+   .news-detail img
+      width: 550px
+      height: 338px
+   .news-detail__content
+      max-width: 100%
+   .team__box .author__item img
+      width: 360px
+      height: 474px
+   .author__item
+      max-width: 930px
+   .news .news__item:before, .partner .news__item img, .news__item > img, .news .news__item:before
+      height: 330px
+   .project .news__item:before
+      height: 240px
+   .project .news__item img
+      height: 240px
+   .pub__item img
+      width: 265px
+      height: 380px
+   .contacts #map
+      width: 805px
+      height: 500px
+   .project-view .swiper
+      height: 730px
+   .author__content p
+      width: 100%
+   .note__close 
+      flex: 1 0 auto 
+      max-width: 176px
+   .news-detail__top p 
+      margin-bottom: 0
+   .services__item p
+      width: 100%
+   .project-view .menu2.active:before
+      height: 111px
+      top: -101px
+   .cls 
+      top: -44px
+   .project-view .menu2.active
+      z-index: 3
+   .project-view .menu-btn2.active
+      z-index: 4
 @media screen and (max-width: 1199px)
+   .van__item:after
+      display: none
    .van__item img
       width: 57%
    .swiper-button-next
@@ -216,6 +333,27 @@
       padding: 20px
       p
          margin-right: 40px
+   .container
+      max-width: 960px
+   .team__box .author__item img
+      width: 100%
+      height: auto
+   .cls 
+      right: 11px
+      top: -76px
+   .project-view .menu2.active
+      bottom: 3%
+      z-index: 3
+   .project-view .menu2.active:after 
+      content: ""
+      display: block
+      width: 100%
+      height: 253px
+      position: absolute
+      bottom: -247px
+      left: 0
+      z-index: 1
+      background: #B3ABA1
 @media ( max-width: 991px )
    .van__item:after
       display: none !important
@@ -405,20 +543,39 @@
          img 
             opacity: 1
    .cls 
-      right: 20px
-      top: -65px
+      right: 12px
+      top: -74px
       z-index: 2
    .project-view .swiper-button-next:hover img, .project-view .swiper-button-prev:hover img
       max-width: 50px
    .note p
       font-size: 13px
+   .note__close 
+      flex: 1 0 auto
+      max-width: 176px
+   .container
+      max-width: 720px
+   .project-view .swiper
+      height: auto
+   .project-view .menu2.active
+      bottom: 6%
+   .project-view .menu2.active:after 
+      content: ""
+      display: block
+      width: 100%
+      height: 253px
+      position: absolute
+      bottom: -247px
+      left: 0
+      z-index: 1
+      background: #B3ABA1
 @media screen and (max-width: 767px)
    .swiper
       height: 100%
    .author__right
       max-width: 69.85%
    .van__item img
-      height: 217px
+      height: auto
       width: 75%
    .about__item
       height: 100%
@@ -466,6 +623,18 @@
    .note a 
       max-width: 108px
       height: 40px
+   .container
+      max-width: 540px
+   .project-view .menu2.active::before 
+      height: 198px
+      top: -196px
+   .project-view .menu2.active
+      bottom: 11%
+   .project-view .menu2.active:after 
+      height: 358px
+      bottom: -353px
+   .cls
+      top: -94px
 @media screen and (max-width: 576px)
    input, textarea, select
       -webkit-appearance: none
@@ -542,6 +711,7 @@
       border-radius: 0
    .text__bg
       top: 40px
+      object-fit: cover
    button:active, button:focus 
       outline: none
    button::-moz-focus-inner 
@@ -557,7 +727,7 @@
    .about-text
       padding: 80px 0
    .team 
-      padding: 40px 0 
+      padding: 40px 0 100px
    .team__box .author__item img
       height: auto
    .news__item a
@@ -613,11 +783,11 @@
    .project-view .menu2.active
       padding: 80px 0 128px
       max-height: 580px
-      bottom: 25%
+      bottom: 17%
    .project-view .menu2.active::before
-      height: 177px
+      height: 297px
       top: inherit
-      bottom: -160px
+      bottom: -291px
    .pub__item p
       max-width: 90%
    .pub__item img
@@ -664,7 +834,8 @@
       left: 0.5px
       top: 0.5px
    .text-main 
-      padding: 120px 0 157px
+      padding: 150px 0 157px
+      margin-top: -20px
    .project-view__box.box
       .swiper-button-next
          display: block
@@ -688,9 +859,6 @@
       position: relative
       top: 0
       max-width: 380px
-   .project-view .menu-btn2.active:hover
-      position: relative
-      top: -180px
    .project-view .menu2.active p:nth-child(2)
       max-width: 336px
    .note
@@ -706,12 +874,33 @@
       font-size: 10px !important
    .invalid input 
       border: 1px solid #c00 !important
-@media screen and (max-width: 460px)
-   .project-view .menu-btn2.active:hover
-      top: -144px
-@media screen and (max-width: 380px)
-   .project-view .menu-btn2.active:hover
-      top: -126px
+   .note__close
+      height: 40px
+      max-width: 150px
+   .team__box .author__item img
+      width: 100%
+   .news__item img
+      height: auto
+   .pub__pic:after
+      height: 100%
+   .pub__item img
+      height: auto
+   .project .news__item:before
+      height: 240px
+   .partner .news__item:before
+      height: 214px
+   .van__content
+      max-width: 100%
+   .project-view .menu-btn2.active
+      top: -100px
+@media screen and (max-width: 500px)
+   .project-view .menu-btn2.active 
+      top: -165px
+   .project-view .menu2.active
+      bottom: 25%
+@media screen and (max-width: 400px)
+   .project-view .menu2.active
+      bottom: 28%
 @media screen and (max-width: 340px)
    .pub__item
       width: 48%
@@ -721,9 +910,15 @@
       right: 33%
    .project-view .menu2.active p:nth-child(2)
       max-width: 300px
-   .project-view .menu-btn2.active:hover
-      top: -100px
+   .project-view .menu-btn2.active
+      top: -137px
    .project-view__box.box .swiper-button-prev
       left: 38% !important
    .project-view__box.box .swiper-button-next
       right: 38% !important
+   .mySwiper2 .swiper-slide img
+      max-width: 260px
+   .popup__flex p
+      width: 80%
+   .close-popup
+      right: 34%

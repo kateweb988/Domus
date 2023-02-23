@@ -22,7 +22,6 @@
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-	<script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -95,9 +94,9 @@
 		<section class="text about-text" id="text">
 			<div class="container">
 				<div class="text__box">
-					<h2>
+					<h1>
 						наши Партнеры
-					</h2>
+					</h1>
 					<p>
 						Выстроенные годами взаимоотношения с лучшими локальными брендами и мебельными мануфактурами позволяют изготовить на своем производстве или на производственных мощностях партнеров предметы любой сложности. Авторский надзор за исполнением при этом мы берем на себя.
 					</p>
@@ -200,7 +199,8 @@
 				</div>
 				<a href="#" class="news__load">
 					Загрузить ещё
-					<svg class="icon"><use xlink:href="/img/svg-sprite.svg#reload"></use></svg>
+					<img src="/img/rel.svg" alt="" class="rel">
+					<img src="/img/rel22.svg" alt="" class="rel2">
 				</a>
 			</div>
 		</section>
@@ -267,50 +267,8 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script type="text/javascript">
-	ymaps.ready(init);
-	
-	function init () {
-		var myMap = new ymaps.Map("map", {
-			// Центр карты, указываем коордианты
-			center:[55.704524, 37.615380],
-			// Масштаб, тут все просто
-			zoom: 12,
-			// Отключаем все элементы управления
-			controls: []
-		}); 
-				
-		var myGeoObjects = [];
-		
-		// Наша метка, указываем коордианты
-		myGeoObjects = new ymaps.Placemark([55.704524, 37.615380],{
-						balloonContentBody: 'DOMUS OPTIMA ',
-						},{
-						iconLayout: 'default#image',
-						// Путь до нашей картинки
-						iconImageHref: '/img/icon.png', 
-						// Размер по ширине и высоте
-						iconImageSize: [340, 150],
-						// Смещение левого верхнего угла иконки относительно
-						// её «ножки» (точки привязки).
-						iconImageOffset: [-35, -35]
-		});
-					
-		var clusterer = new ymaps.Clusterer({
-			clusterDisableClickZoom: false,
-			clusterOpenBalloonOnClick: false,
-		});
-		
-		clusterer.add(myGeoObjects);
-		myMap.geoObjects.add(clusterer);
-		// Отлючаем возможность изменения масштаба
-		myMap.behaviors.disable('scrollZoom');
-	
-	}
-	</script>   
-		<script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>  
+	<script>
 			// ___________________________________________________________________
 // validate contact form
 const myform = document.getElementById('myform');

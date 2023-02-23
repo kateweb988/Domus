@@ -22,7 +22,6 @@
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-	<script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -157,9 +156,11 @@
 				<h2>
 					Команда
 				</h2>
-				<p class="team__sub">
-					Исключительность и эксклюзивность в деталях. Как сами интерьеры, так и любой предмет обстановки для интерьеров, которые мы разрабатываем и реализуем, будто то мебель, лестница или люстра, может производиться по нашим авторским эскизам. 
-				</p>
+				<div class="team__sub">
+					<p>
+						Исключительность и эксклюзивность в деталях. Как сами интерьеры, так и любой предмет обстановки для интерьеров, которые мы разрабатываем и реализуем, будто то мебель, лестница или люстра, может производиться по нашим авторским эскизам. 
+					</p>
+				</div>
 				<div class="team__box d-flex">
 					<div class="author__item">
 						<img src="/img/img2.png" srcset="/img/2x/img2-2x.png 2x">
@@ -342,48 +343,7 @@
 		</footer>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script type="text/javascript">
-	ymaps.ready(init);
 	
-	function init () {
-		var myMap = new ymaps.Map("map", {
-			// Центр карты, указываем коордианты
-			center:[55.704524, 37.615380],
-			// Масштаб, тут все просто
-			zoom: 12,
-			// Отключаем все элементы управления
-			controls: []
-		}); 
-				
-		var myGeoObjects = [];
-		
-		// Наша метка, указываем коордианты
-		myGeoObjects = new ymaps.Placemark([55.704524, 37.615380],{
-						balloonContentBody: 'DOMUS OPTIMA ',
-						},{
-						iconLayout: 'default#image',
-						// Путь до нашей картинки
-						iconImageHref: '/img/icon.png', 
-						// Размер по ширине и высоте
-						iconImageSize: [340, 150],
-						// Смещение левого верхнего угла иконки относительно
-						// её «ножки» (точки привязки).
-						iconImageOffset: [-35, -35]
-		});
-					
-		var clusterer = new ymaps.Clusterer({
-			clusterDisableClickZoom: false,
-			clusterOpenBalloonOnClick: false,
-		});
-		
-		clusterer.add(myGeoObjects);
-		myMap.geoObjects.add(clusterer);
-		// Отлючаем возможность изменения масштаба
-		myMap.behaviors.disable('scrollZoom');
-	
-	}
-	</script>    
 	<script>
 		// ___________________________________________________________________
 // validate contact form
